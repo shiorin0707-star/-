@@ -47,15 +47,115 @@ body{
   color:var(--teal);font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center;
   cursor:pointer;
 }
-.htitle{color:var(--teal);font-size:24px;font-weight:800;letter-spacing:.5px;}
+.hspace{width:42px;height:42px;}
+.htitle{color:var(--teal);font-size:23px;font-weight:800;letter-spacing:.5px;}
 .htrophy{
   width:42px;height:42px;border-radius:50%;background:#a8987e;border:none;color:#fff;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
 }
 .htrophy.dim{background:#bdbdbd;}
+.hq{
+  width:42px;height:42px;border-radius:50%;background:var(--teal);border:none;color:#fff;
+  font-size:22px;font-weight:800;cursor:pointer;
+}
 /* ---------- screens ---------- */
 .screen{display:none;flex:1 1 auto;flex-direction:column;overflow-y:auto;position:relative;}
 .screen.active{display:flex;}
+/* ---------- HOME ---------- */
+#scr-home{padding-bottom:100px;}
+.home-top{display:flex;align-items:flex-start;justify-content:space-between;padding:16px 16px 0;}
+.home-mascot{display:flex;align-items:center;}
+.bubble{
+  color:#ff4d5e;font-size:17px;font-weight:800;line-height:1.4;position:relative;
+  padding-left:16px;white-space:nowrap;
+}
+.bubble::before{content:'＼';position:absolute;left:0;top:-4px;color:#ff4d5e;}
+.voicebtn{
+  background:var(--teal);color:#fff;border:none;border-radius:26px;font-size:16px;font-weight:800;
+  font-family:inherit;padding:13px 20px;cursor:pointer;display:flex;align-items:center;gap:8px;
+}
+.redbanner{
+  background:var(--coral);color:#fff;border-radius:10px;margin:16px 16px 0;padding:16px 10px;
+  text-align:center;font-size:17px;font-weight:800;
+}
+.cal-title{color:var(--teal);text-align:center;font-size:21px;font-weight:800;margin-top:18px;}
+.cal-wrap{background:#fff;border-radius:10px;margin:12px 16px 0;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
+.cal-h{background:var(--teal);color:#fff;text-align:center;padding:9px 0;font-size:14px;font-weight:800;}
+.cal-c{border:1px solid #f0ece0;min-height:56px;text-align:center;padding-top:4px;cursor:pointer;}
+.cal-d{color:var(--teal);font-size:15px;font-weight:800;}
+.cal-d.today{color:#ff4d3d;}
+.cal-ic{display:flex;justify-content:center;gap:1px;height:22px;margin-top:1px;}
+.d5btn{
+  display:flex;align-items:center;justify-content:center;gap:12px;background:var(--teal);color:#fff;
+  border:none;border-radius:40px;font-size:23px;font-weight:800;font-family:inherit;
+  padding:18px 26px;margin:24px auto 0;width:82%;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.08);
+}
+.d5btn small{font-size:15px;font-weight:800;}
+.d5btn:disabled{background:#b9c4c6;}
+.home-bottom{display:flex;align-items:flex-end;justify-content:space-between;padding:26px 16px 0;}
+.wordcard{
+  background:#fff;border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:9px;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+.wordcard .num{color:var(--teal);font-size:24px;font-weight:800;line-height:1;}
+.wordcard .cap{font-size:11px;color:#888;}
+.wordcard img{width:38px;height:38px;border-radius:8px;}
+.infobtn{
+  width:46px;height:46px;border-radius:50%;background:var(--coral);color:#fff;border:none;
+  font-size:21px;font-weight:800;font-family:Georgia,serif;font-style:italic;cursor:pointer;
+}
+/* ---------- HUB (選手権) ---------- */
+#scr-hub{padding-bottom:100px;}
+.hub-top{display:flex;align-items:center;gap:20px;padding:22px 26px 6px;}
+.hub-meta div:nth-child(1){color:var(--teal);font-size:19px;font-weight:800;}
+.hub-meta div:nth-child(2){color:var(--teal);font-size:33px;font-weight:800;}
+.hub-meta div:nth-child(3){color:var(--teal);font-size:18px;font-weight:800;}
+.hubcard{
+  background:#fff;border:1px solid var(--card-border);border-radius:12px;margin:12px 16px;
+  padding:16px 14px;display:flex;align-items:center;gap:14px;cursor:pointer;
+}
+.hubcard .ic{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 52px;}
+.hubcard .tx{flex:1;text-align:center;}
+.hubcard .tx b{display:block;font-size:21px;color:#222;}
+.hubcard .tx span{font-size:14px;color:#555;}
+.hubcard.locked{opacity:.5;}
+.hubcard.danger .tx b{color:#f4502e;}
+/* ---------- league / major ---------- */
+#scr-league,#scr-major{padding-bottom:100px;}
+.league-info{color:var(--teal);font-size:16px;font-weight:800;line-height:1.55;margin:16px 18px 6px;}
+.seclist{padding:8px 16px 0;}
+.secrow{display:flex;align-items:center;margin-bottom:14px;}
+.seccard{
+  flex:1;display:flex;align-items:center;background:#fff;border:1px solid var(--card-border);
+  border-radius:12px;padding:10px 0 10px 12px;cursor:pointer;overflow:hidden;min-height:72px;position:relative;
+}
+.sec-troph{
+  width:48px;height:48px;border-radius:50%;background:#a8987e;color:#fff;display:flex;
+  align-items:center;justify-content:center;flex:0 0 48px;margin-right:12px;
+}
+.sec-troph.dim{background:#cfc8ba;}
+.sec-troph.silver{background:#b9bdc4;}
+.sec-ch{font-size:14px;font-weight:800;color:#333;margin-right:8px;white-space:nowrap;}
+.sec-name{color:var(--teal);font-size:22px;font-weight:800;flex:1;}
+.sec-name small{font-size:13px;color:#888;display:block;}
+.rankchip{
+  flex:0 0 56px;align-self:stretch;display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:800;color:#6b5300;
+  background:linear-gradient(180deg,#caa53d,#f8e878,#caa53d);
+}
+.rankchip.none{background:#eee;color:#bbb;font-size:16px;}
+.side-slot{flex:0 0 64px;height:64px;margin-left:8px;display:flex;align-items:center;justify-content:center;}
+.sakura{position:relative;width:60px;height:60px;display:flex;align-items:center;justify-content:center;}
+.sakura svg{position:absolute;inset:0;}
+.sakura span{position:relative;color:#fff;font-size:13px;font-weight:800;z-index:1;}
+.wrongbtn{
+  width:64px;height:64px;border:none;border-radius:12px;background:#2bb3d6;color:#fff;cursor:pointer;
+  font-size:11px;font-weight:800;font-family:inherit;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:3px;
+}
+.wrongbtn:disabled{background:#c3cdd0;}
+.major-mascot{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;}
 /* ---------- quiz ---------- */
 #qstrip{
   height:46px;flex:0 0 46px;display:flex;align-items:center;justify-content:space-between;
@@ -90,14 +190,8 @@ body{
   background:#fff;border:1px solid #ccc;border-radius:30px;color:#999;font-weight:800;
   font-size:18px;padding:14px 52px;cursor:pointer;font-family:inherit;
 }
-/* feedback overlay */
-#mark{
-  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
-  pointer-events:none;z-index:20;
-}
-#mark .maru{
-  width:330px;height:330px;border-radius:50%;border:20px solid rgba(235,75,105,.75);
-}
+#mark{position:absolute;inset:0;display:none;align-items:center;justify-content:center;pointer-events:none;z-index:20;}
+#mark .maru{width:330px;height:330px;border-radius:50%;border:20px solid rgba(235,75,105,.75);}
 #mark .batsu{position:relative;width:300px;height:300px;}
 #mark .batsu::before,#mark .batsu::after{
   content:'';position:absolute;left:50%;top:50%;width:34px;height:330px;border-radius:17px;
@@ -110,18 +204,13 @@ body{
   font-weight:800;border-radius:8px;padding:4px 12px;display:none;z-index:30;
 }
 #ptsBadge::after{
-  content:'';position:absolute;left:14px;bottom:-7px;border:8px solid transparent;border-top-color:var(--pink);
-  border-bottom:0;
+  content:'';position:absolute;left:14px;bottom:-7px;border:8px solid transparent;border-top-color:var(--pink);border-bottom:0;
 }
 /* ---------- result ---------- */
 #scr-result{padding-bottom:30px;}
 .res-top{display:flex;padding:16px 16px 4px;align-items:flex-start;}
 .res-mascot{flex:0 0 150px;position:relative;}
-.bubble{
-  color:#ff4d5e;font-size:17px;font-weight:800;line-height:1.4;position:relative;
-  padding-left:14px;margin-bottom:2px;white-space:nowrap;
-}
-.bubble::before{content:'＼';position:absolute;left:-2px;top:-2px;color:#ff4d5e;}
+.res-mascot .bubble{margin-bottom:2px;}
 .res-score{flex:1;text-align:right;}
 .res-score .tbl{font-size:14px;font-weight:800;}
 .res-score .plus{font-size:24px;font-weight:800;margin:2px 0 8px;}
@@ -131,9 +220,7 @@ body{
 }
 .res-total b{color:#ff4d3d;font-size:52px;font-weight:800;}
 .res-total span{color:#ff4d3d;font-size:22px;font-weight:800;}
-.res-card{
-  background:#fff;border-radius:14px;margin:14px 16px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.05);
-}
+.res-card{background:#fff;border-radius:14px;margin:14px 16px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 .res-row{margin-bottom:16px;}
 .res-row:last-child{margin-bottom:0;}
 .res-row .lbl{font-size:15px;font-weight:800;margin-bottom:6px;}
@@ -147,8 +234,8 @@ body{
   display:flex;align-items:center;font-size:16px;font-weight:800;flex-wrap:wrap;gap:4px 0;
 }
 .best-row .y{color:var(--yellow);}
-.best-row .seg1{flex:1 1 46%;}
-.best-row .seg2{flex:1 1 54%;text-align:right;}
+.best-row .seg1{flex:1 1 50%;}
+.best-row .seg2{flex:1 1 50%;text-align:right;}
 .bigbtn{
   display:flex;align-items:center;justify-content:center;gap:14px;background:var(--teal);color:#fff;
   border:none;border-radius:44px;font-size:24px;font-weight:800;font-family:inherit;
@@ -163,59 +250,51 @@ body{
   border:3px solid var(--teal);border-radius:40px;font-size:19px;font-weight:800;font-family:inherit;
   padding:12px 26px;margin:18px auto 0;width:60%;cursor:pointer;
 }
-/* ---------- league ---------- */
-#scr-league{padding-bottom:90px;}
-.tabs{display:flex;margin:18px 16px 0;border:3px solid var(--teal);border-radius:14px;overflow:hidden;background:#fff;}
-.tabs button{
-  flex:1;border:none;background:#fff;color:var(--teal);font-size:19px;font-weight:800;
-  padding:14px 0;cursor:pointer;font-family:inherit;
+/* ---------- profile ---------- */
+#scr-profile{padding-bottom:100px;}
+.ptitle{background:#fff;text-align:center;padding:14px 0;color:var(--teal);font-size:23px;font-weight:800;}
+.ptabs{display:flex;background:#fff;border-bottom:2px solid var(--teal);}
+.ptabs button{
+  flex:1;border:none;background:#fff;color:var(--teal);font-size:15px;font-weight:800;
+  padding:13px 4px;cursor:pointer;font-family:inherit;line-height:1.3;
 }
-.tabs button.on{background:var(--teal);color:#fff;}
-.league-info{color:var(--teal);font-size:16px;font-weight:800;line-height:1.55;margin:16px 18px 6px;}
-.seclist{padding:8px 16px 0;}
-.secrow{display:flex;align-items:center;margin-bottom:14px;}
-.seccard{
-  flex:1;display:flex;align-items:center;background:#fff;border:1px solid var(--card-border);
-  border-radius:12px;padding:10px 0 10px 12px;cursor:pointer;overflow:hidden;min-height:72px;position:relative;
+.ptabs button.on{background:var(--teal);color:#fff;}
+.avcard{
+  background:#fff;border:1px solid var(--card-border);border-radius:12px;margin:16px 16px 0;
+  display:flex;overflow:hidden;
 }
-.sec-troph{
-  width:48px;height:48px;border-radius:50%;background:#a8987e;color:#fff;display:flex;
-  align-items:center;justify-content:center;flex:0 0 48px;margin-right:12px;
+.avcard .av{flex:0 0 120px;display:flex;align-items:center;justify-content:center;border-right:1px solid #eee;padding:10px;}
+.avcard .avr{flex:1;display:flex;flex-direction:column;}
+.avcard .nm{padding:16px;font-size:21px;font-weight:800;border-bottom:1px solid #eee;}
+.avcard .lvrow{display:flex;align-items:center;padding:12px 16px;gap:18px;}
+.avcard .lv{font-size:18px;font-weight:800;}
+.badge{width:34px;height:34px;}
+.badge.off{opacity:.2;filter:grayscale(1);}
+.psec{display:flex;align-items:center;gap:10px;margin:22px 18px 8px;font-size:20px;font-weight:800;}
+.psec .ic{width:40px;height:40px;border-radius:50%;background:#c8a23c;display:flex;align-items:center;justify-content:center;}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e6e1d2;border-radius:12px;overflow:hidden;margin:0 16px;border:1px solid var(--card-border);}
+.statgrid .cell{background:#fff;padding:16px 8px;text-align:center;}
+.statgrid .cell.wide{grid-column:1/3;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;}
+.statgrid .k{color:var(--teal);font-size:15px;font-weight:800;margin-bottom:8px;}
+.statgrid .v{font-size:27px;font-weight:800;}
+.profrow{
+  background:#fff;border:1px solid var(--card-border);border-radius:12px;margin:0 16px 10px;
+  padding:16px 18px;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:800;
 }
-.sec-troph.dim{background:#cfc8ba;}
-.sec-ch{font-size:14px;font-weight:800;color:#333;margin-right:8px;white-space:nowrap;}
-.sec-name{color:var(--teal);font-size:24px;font-weight:800;flex:1;}
-.rankchip{
-  flex:0 0 56px;align-self:stretch;display:flex;align-items:center;justify-content:center;
-  font-size:30px;font-weight:800;color:#6b5300;
-  background:linear-gradient(180deg,#caa53d,#f8e878,#caa53d);
+.profrow .k{color:var(--teal);}
+.editbtn{
+  background:var(--teal);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:800;
+  font-family:inherit;padding:9px 16px;cursor:pointer;
 }
-.rankchip.none{background:#eee;color:#bbb;font-size:16px;}
-.sakura{
-  flex:0 0 56px;height:56px;margin-left:8px;position:relative;display:flex;align-items:center;justify-content:center;
-  visibility:hidden;
+.weakrow{
+  background:#fff;border-radius:10px;display:flex;align-items:center;padding:13px 16px;margin:0 16px 8px;
+  font-size:17px;font-weight:800;gap:10px;
 }
-.secrow.perfect .sakura{visibility:visible;}
-.sakura svg{position:absolute;inset:0;}
-.sakura span{position:relative;color:#fff;font-size:13px;font-weight:800;z-index:1;}
-/* special tab */
-.spcard{
-  background:#fff;border:1px solid var(--card-border);border-radius:14px;margin:0 16px 14px;
-  padding:18px;cursor:pointer;
-}
-.spcard h3{color:var(--teal);font-size:21px;margin-bottom:4px;}
-.spcard p{font-size:14px;color:#666;font-weight:700;}
-.spcard.off{opacity:.45;cursor:default;}
-/* ---------- home ---------- */
-#scr-home{align-items:center;text-align:center;padding-bottom:90px;}
-.home-logo{margin-top:34px;color:var(--teal);font-size:38px;font-weight:800;letter-spacing:2px;}
-.home-sub{color:#8a7a55;font-size:16px;margin-top:6px;font-weight:800;}
-.home-stats{
-  background:#fff;border-radius:14px;margin-top:22px;padding:14px 26px;font-size:15px;
-  font-weight:800;color:#555;line-height:1.9;box-shadow:0 1px 3px rgba(0,0,0,.05);
-}
-.home-stats b{color:#ff4d3d;font-size:20px;}
-/* ---------- listen / profile / settings ---------- */
+.weakrow .pos{color:var(--teal);width:48px;}
+.weakrow .kr{font-size:20px;}
+.weakrow .jp{flex:1;color:#777;font-size:14px;}
+.weakrow .ct{color:#ff4d3d;}
+/* ---------- listen/settings ---------- */
 .page-pad{padding:22px 20px 100px;}
 .page-pad h2{color:var(--teal);font-size:24px;margin-bottom:10px;}
 .page-pad p.desc{font-size:15px;color:#666;line-height:1.7;margin-bottom:18px;}
@@ -225,26 +304,13 @@ body{
 }
 .toggle{width:58px;height:32px;border-radius:16px;background:#ccc;border:none;position:relative;cursor:pointer;transition:background .2s;}
 .toggle.on{background:var(--teal);}
-.toggle::after{
-  content:'';position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .2s;
-}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .2s;}
 .toggle.on::after{left:29px;}
 .dangerbtn{
   background:#fff;border:2px solid var(--red);color:var(--red);border-radius:30px;font-size:16px;
   font-weight:800;padding:12px 30px;cursor:pointer;font-family:inherit;display:block;margin:20px auto 0;
 }
 input[type=range]{width:140px;}
-/* ---------- ranking ---------- */
-.rk-list{padding:14px 16px 30px;}
-.rk-row{
-  background:#fff;border-radius:10px;display:flex;align-items:center;padding:12px 16px;margin-bottom:8px;
-  font-size:17px;font-weight:800;
-}
-.rk-row .pos{width:52px;color:var(--teal);font-size:19px;}
-.rk-row .nm{flex:1;}
-.rk-row .sc{color:#ff4d3d;}
-.rk-row.me{background:#ffe9b8;border:2px solid var(--orange);}
-.rk-row .medal{font-size:22px;width:52px;}
 /* ---------- bottom nav ---------- */
 #bottomnav{
   position:absolute;left:0;right:0;bottom:0;height:74px;background:var(--teal);display:none;
@@ -255,18 +321,14 @@ input[type=range]{width:140px;}
 #bottomnav button.on .ic{filter:drop-shadow(0 0 4px rgba(255,255,200,.9));}
 #bottomnav button.on svg path, #bottomnav button.on svg circle, #bottomnav button.on svg rect{fill:#ffe34d;}
 /* ---------- modal ---------- */
-#modal{
-  position:absolute;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:60;
-}
+#modal{position:absolute;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:60;}
 .modal-box{background:#fff;border-radius:18px;padding:26px 24px;width:80%;text-align:center;}
-.modal-box p{font-size:18px;font-weight:800;margin-bottom:20px;line-height:1.6;}
+.modal-box p{font-size:17px;font-weight:800;margin-bottom:20px;line-height:1.7;}
 .modal-btns{display:flex;gap:12px;}
-.modal-btns button{
-  flex:1;border-radius:28px;padding:13px 0;font-size:17px;font-weight:800;font-family:inherit;cursor:pointer;
-}
+.modal-btns button{flex:1;border-radius:28px;padding:13px 0;font-size:17px;font-weight:800;font-family:inherit;cursor:pointer;}
 .m-cancel{background:#fff;border:3px solid var(--teal);color:var(--teal);}
 .m-ok{background:var(--teal);border:3px solid var(--teal);color:#fff;}
-/* ---------- PWA standalone (iPhoneフルスクリーン) ---------- */
+/* ---------- PWA standalone ---------- */
 @supports(padding:env(safe-area-inset-top)){
   body.standalone #statusbar{height:env(safe-area-inset-top);flex-basis:env(safe-area-inset-top);}
   body.standalone #statusbar > *{display:none;}
@@ -293,38 +355,68 @@ input[type=range]{width:140px;}
 
   <!-- ============ HOME ============ -->
   <div class="screen" id="scr-home">
-    <div class="home-logo">韓単リーグ</div>
-    <div class="home-sub">TOPIK初級 全1671語</div>
-    <div style="margin-top:18px" id="homeMascot"></div>
-    <div class="home-stats" id="homeStats"></div>
-    <button class="bigbtn" onclick="go('league')">ルーキーリーグへ <span class="circ">›</span></button>
-    <button class="subbtn" onclick="startRandom()">ランダム30問に挑戦 <span class="circ">›</span></button>
+    <div class="home-top">
+      <div class="home-mascot"><span id="homeMascot"></span><span class="bubble" id="homeBubble">오늘도 화이팅〜！</span></div>
+      <button class="voicebtn" onclick="showInfoModal('feedback')">
+        <svg width="22" height="16" viewBox="0 0 22 16"><rect x="0" y="0" width="22" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M1 2 L11 9 L21 2" stroke="#fff" stroke-width="2" fill="none"/></svg>
+        ご意見</button>
+    </div>
+    <div class="redbanner">カレンダーをタップして目標登録しよう</div>
+    <div class="cal-title" id="calTitle">2026年 6月</div>
+    <div class="cal-wrap"><div class="cal-grid" id="calGrid"></div></div>
+    <button class="d5btn" id="d5Btn" onclick="startDaily()">
+      <svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 1 L33 13 L27 32 H7 L1 13 Z" fill="#fff"/><text x="17" y="24" text-anchor="middle" font-size="17" font-weight="bold" fill="var(--teal)">5</text></svg>
+      <span id="d5Label">夜の５問！</span><small id="d5Left">あと５回</small>
+      <span class="circ">›</span>
+    </button>
+    <div class="home-bottom">
+      <div class="wordcard">
+        <img src="apple-touch-icon.png" alt="" onerror="this.style.display='none'">
+        <div><div class="num">1671</div><div class="cap">TOPIK初級単語</div></div>
+      </div>
+      <button class="infobtn" onclick="showInfoModal('about')">i</button>
+    </div>
   </div>
 
-  <!-- ============ LEAGUE ============ -->
+  <!-- ============ HUB（選手権） ============ -->
+  <div class="screen" id="scr-hub">
+    <div class="header">
+      <span class="hspace"></span>
+      <span class="htitle">TOPIK選手権</span>
+      <button class="hq" onclick="showInfoModal('help')">?</button>
+    </div>
+    <div class="hub-top">
+      <span id="hubAvatar"></span>
+      <div class="hub-meta">
+        <div id="hubName">あなた</div>
+        <div id="hubScore">0点</div>
+        <div id="hubLv">Lv.1</div>
+      </div>
+    </div>
+    <div id="hubCards"></div>
+  </div>
+
+  <!-- ============ ルーキーリーグ ============ -->
   <div class="screen" id="scr-league">
     <div class="header">
-      <button class="hbtn" onclick="go('home')">‹</button>
+      <button class="hbtn" onclick="go('hub')">‹</button>
       <span class="htitle">ルーキーリーグ</span>
-      <button class="htrophy" onclick="openRanking(null)">TROPHY_SVG</button>
+      <span class="hspace"></span>
     </div>
-    <div class="tabs">
-      <button id="tab4" class="on" onclick="leagueTab(0)">四択</button>
-      <button id="tabSp" onclick="leagueTab(1)">スペシャル</button>
-    </div>
-    <div class="league-info">ランクはS~Dまであるよ。各ChapterオールB以上でメジャーリーグにチャレンジできるよ。<br>１Sectionずつ確実に進めよう。</div>
+    <div class="league-info">ランクはSS〜Dまであるよ。1 Sectionは100単語、毎回その中から30問出題されるよ。<br>１Sectionずつ確実に進めよう。</div>
     <div class="seclist" id="seclist"></div>
-    <div id="speclist" style="display:none;padding-top:8px;">
-      <div class="spcard" onclick="startRandom()">
-        <h3>全範囲ランダム四択</h3><p>1671語からランダムに30問出題（韓日・日韓・リスニング）</p>
-      </div>
-      <div class="spcard" onclick="startListening()">
-        <h3>リスニング特訓</h3><p>音声を聞いて意味を当てよう（15問）</p>
-      </div>
-      <div class="spcard" id="reviewCard" onclick="startReview()">
-        <h3>苦手復習</h3><p id="reviewDesc">間違えた単語から出題</p>
-      </div>
+  </div>
+
+  <!-- ============ メジャーリーグ ============ -->
+  <div class="screen" id="scr-major">
+    <div class="header">
+      <button class="hbtn" onclick="go('hub')">‹</button>
+      <span class="htitle">メジャーリーグ</span>
+      <span class="hspace"></span>
     </div>
+    <div class="major-mascot"><span id="majorMascot"></span><span class="bubble">がんばろう〜</span></div>
+    <div class="league-info">すべてＢランク以上にするとプレミアムリーグにチャレンジできるよ。ランクはSS〜Dまであるよ。</div>
+    <div class="seclist" id="chlist"></div>
   </div>
 
   <!-- ============ QUIZ ============ -->
@@ -332,7 +424,7 @@ input[type=range]{width:140px;}
     <div class="header">
       <button class="hbtn" onclick="askQuit()">✕</button>
       <span class="htitle" id="quizTitle">Section 1</span>
-      <button class="htrophy dim">TROPHY_SVG</button>
+      <button class="htrophy dim">T</button>
     </div>
     <div id="qstrip">
       <span class="tb">
@@ -359,13 +451,13 @@ input[type=range]{width:140px;}
   <div class="screen" id="scr-result">
     <div class="header">
       <button class="hbtn" onclick="exitResult()">✕</button>
-      <span class="htitle" id="resTitle">Chapter 1</span>
-      <button class="htrophy dim">TROPHY_SVG</button>
+      <span class="htitle" id="resTitle">Section 1</span>
+      <button class="htrophy dim">T</button>
     </div>
     <div class="res-top">
       <div class="res-mascot">
         <div class="bubble" id="bub1">すごい！</div>
-        <div class="bubble" id="bub2">Sランクだよ！</div>
+        <div class="bubble" id="bub2">SSランクだよ！</div>
         <div id="resMascot"></div>
       </div>
       <div class="res-score">
@@ -375,24 +467,8 @@ input[type=range]{width:140px;}
       </div>
     </div>
     <div class="res-card" id="resRows"></div>
-    <div class="best-row" id="bestAll"></div>
-    <div class="best-row" id="bestMonth"></div>
+    <div class="best-row" id="bestRow"></div>
     <button class="bigbtn" onclick="retry()">再チャレンジする <span class="circ">›</span></button>
-    <button class="subbtn" onclick="openRanking(lastQuizKey)">
-      <svg width="26" height="22" viewBox="0 0 26 22"><rect x="9" y="2" width="8" height="18" rx="1" fill="var(--teal)"/><rect x="0" y="8" width="8" height="12" rx="1" fill="var(--teal)"/><rect x="18" y="11" width="8" height="9" rx="1" fill="var(--teal)"/><text x="13" y="11" font-size="8" fill="#fff" text-anchor="middle" font-weight="bold">1</text></svg>
-      ランキング <span class="circ">›</span>
-    </button>
-  </div>
-
-  <!-- ============ RANKING ============ -->
-  <div class="screen" id="scr-ranking">
-    <div class="header">
-      <button class="hbtn" onclick="go(rankBack)">‹</button>
-      <span class="htitle">ランキング</span>
-      <button class="htrophy">TROPHY_SVG</button>
-    </div>
-    <div class="league-info" style="margin-top:14px" id="rkInfo">全国ランキング（今月）</div>
-    <div class="rk-list" id="rkList"></div>
   </div>
 
   <!-- ============ LISTEN ============ -->
@@ -401,16 +477,18 @@ input[type=range]{width:140px;}
       <h2>リスニング</h2>
       <p class="desc">韓国語の音声を聞いて、正しい意味を選ぶ特訓モードだよ。<br>※音声はブラウザの読み上げ機能（韓国語ボイス）を使うよ。</p>
       <button class="bigbtn" style="width:100%;margin-top:6px" onclick="startListening()">リスニング特訓（15問） <span class="circ">›</span></button>
-      <button class="subbtn" style="width:80%" onclick="startRandom()">ミックス30問 <span class="circ">›</span></button>
     </div>
   </div>
 
   <!-- ============ PROFILE ============ -->
   <div class="screen" id="scr-profile">
-    <div class="page-pad">
-      <h2>マイページ</h2>
-      <div id="profBox"></div>
+    <div class="ptitle" id="profName">あなた</div>
+    <div class="ptabs">
+      <button id="ptab0" class="on" onclick="profTab(0)">マイデータ</button>
+      <button id="ptab1" onclick="profTab(1)">苦手単語<br>TOP10</button>
     </div>
+    <div id="profMain"></div>
+    <div id="profWeak" style="display:none;padding-top:14px;"></div>
   </div>
 
   <!-- ============ SETTINGS ============ -->
@@ -421,7 +499,7 @@ input[type=range]{width:140px;}
       <div class="setrow">読み上げ速度 <input type="range" min="0.5" max="1.3" step="0.1" value="0.9" id="rateRange" onchange="setRate(this.value)"></div>
       <div class="setrow">出題時間 <span>各問 10秒</span></div>
       <button class="dangerbtn" onclick="askReset()">学習データをリセット</button>
-      <p class="desc" style="margin-top:24px;text-align:center">韓単リーグ TOPIK初級<br>単語データ：한국어능력시험 초급 1671語</p>
+      <p class="desc" style="margin-top:24px;text-align:center">TOPIK1671<br>単語データ：한국어능력시험 초급 1671語</p>
     </div>
   </div>
 
@@ -433,7 +511,7 @@ input[type=range]{width:140px;}
     <button id="nav-listen" onclick="go('listen')"><span class="ic">
       <svg width="30" height="28" viewBox="0 0 30 28"><path d="M5 16 a10 10 0 0 1 20 0" stroke="#fff" stroke-width="3" fill="none"/><rect x="3" y="15" width="6" height="11" rx="3" fill="#fff"/><rect x="21" y="15" width="6" height="11" rx="3" fill="#fff"/></svg></span>
     </button>
-    <button id="nav-league" onclick="go('league')"><span class="ic">
+    <button id="nav-hub" onclick="go('hub')"><span class="ic">
       <svg width="30" height="28" viewBox="0 0 30 28"><path d="M7 3 H23 V6 H26 V9 a6 6 0 0 1 -5 5.9 A7 7 0 0 1 17 19 V22 H21 V26 H9 V22 H13 V19 A7 7 0 0 1 9 14.9 A6 6 0 0 1 4 9 V6 H7 Z M7 8.2 H6 V9 a4 4 0 0 0 2 3.4 Z M23 8.2 V12.4 A4 4 0 0 0 25 9 V8.2 Z" fill="#fff"/></svg></span>
     </button>
     <button id="nav-profile" onclick="go('profile')"><span class="ic">
@@ -447,10 +525,10 @@ input[type=range]{width:140px;}
   <!-- ============ MODAL ============ -->
   <div id="modal">
     <div class="modal-box fade">
-      <p id="modalMsg">クイズをやめますか？<br>スコアは保存されないよ。</p>
+      <p id="modalMsg"></p>
       <div class="modal-btns">
         <button class="m-cancel" id="mCancel">つづける</button>
-        <button class="m-ok" id="mOk">やめる</button>
+        <button class="m-ok" id="mOk">OK</button>
       </div>
     </div>
   </div>
@@ -460,33 +538,55 @@ input[type=range]{width:140px;}
 'use strict';
 /* ================= DATA ================= */
 const WORDS = [["가게","店"],["가격","価格"],["가구","家具"],["가깝다","近い"],["가끔","時々"],["가다","行く"],["가르치다","教える"],["가방","鞄"],["가볍다","軽い"],["가수","歌手"],["가슴","胸"],["가요","歌謡"],["가운데","間、中間"],["가위","はさみ"],["가을","秋"],["가장","最も、一番"],["가져가다","持って行く"],["가져오다","持って来る"],["가족","家族"],["가지","種類"],["가지다","持つ"],["각","各、おのおの"],["간","間"],["간단하다","簡単だ"],["간단히","簡単に"],["간식","間食、おやつ"],["간장","醤油"],["간호사","看護士"],["갈비","カルビ"],["갈비탕","カルビタン"],["갈색","褐色、茶色"],["갈아타다","乗り換える"],["감","柿"],["감기","風邪"],["감기약","風邪薬"],["감다","（目を）閉じる"],["감동","感動"],["감동하다","感動する"],["감사","感謝"],["감사드립니다","ありがとうございます"],["감사하다","感謝する"],["감사합니다","ありがとうございます"],["감자","じゃがいも"],["감자탕","カムジャタン"],["갑자기","急に"],["값","値段、価値"],["강","川"],["강아지","子犬"],["강좌","講座"],["갖다","持つ"],["같다","同じだ"],["같이","一緒に"],["개","～個、犬"],["개나리","レンギョウ"],["개인","個人"],["거기","そこ"],["거리","通り、街"],["거실","居室、居間"],["거울","鏡"],["거의","ほとんど"],["거짓말","嘘"],["걱정","心配"],["걱정하다","心配する"],["건강","健康"],["건강하다","健康だ"],["건너가다","渡って行く、渡る、横切る"],["건너다","渡る"],["건너편","向こう側、向かい"],["건물","建物"],["건배","乾杯"],["걷다","歩く"],["걸다","かける"],["걸리다","かかる"],["걸어가다","歩いて行く"],["걸어오다","歩いて来る"],["검은색","黒、黒色"],["것","もの、こと"],["게임","ゲーム、遊び"],["겨울","冬"],["겨울방학","冬休み"],["결과","結果"],["결정","決定"],["결정하다","決定する"],["결혼","結婚"],["결혼식","結婚式"],["결혼하다","結婚する"],["경기","競技、試合"],["경기장","競技場"],["경복궁","景福宮"],["경주","慶州"],["경찰","警察"],["경찰관","警察官"],["경찰서","警察署"],["경치","景色、風景"],["경험","経験"],["계단","階段"],["계란","鶏卵、たまご"],["계산하다","計算する"],["계속","続けて"],["계시다","いらっしゃる"],["계절","季節"],["계획","計画"],["고기","肉"],["고등학교","高等学校"],["고등학생","高校生"],["고르다","選ぶ"],["고마웠습니다","ありがとうございました"],["고맙다","ありがたい"],["고맙습니다","ありがとうございます"],["고모","（父方の）おば"],["고모부","（父方の）おばの夫、おじ"],["고속버스","高速バス"],["고양이","猫"],["고장","故障"],["고추","唐辛子"],["고추장","コチュジャン"],["고치다","なおす"],["고프다","（お腹が）すいている、空腹だ"],["고향","故郷、ふるさと"],["곧","すぐ"],["골목","路地、裏通り"],["골프","ゴルフ"],["곱다","美しい"],["곳","ところ"],["공","ボール、玉"],["공간","空間"],["공기","空気"],["공무원","公務員"],["공부","勉強"],["공부하다","勉強する"],["공연","公演"],["공원","公園"],["공중전화","公衆電話"],["공짜","ただ、無料"],["공책","ノート"],["공항","空港"],["공휴일","祝日"],["과","課"],["과거","過去"],["과일","果物"],["과자","菓子"],["과학","科学"],["관계","関係"],["관광하다","観光する"],["관심","関心、興味"],["광고","広告"],["괜찮다","大丈夫だ、構わない"],["괜찮습니다","大丈夫です、結構です"],["교과서","教科書"],["교수","教授"],["교실","教室"],["교체","交代"],["교통","交通"],["교통사고","交通事故"],["교회","教会"],["구","9"],["구경하다","見物する"],["구두","靴"],["구름","雲"],["구십","90"],["구월","９月"],["구하다","求める、手に入れる"],["국","スープ、汁"],["국내","国内"],["국립","国立"],["국수","麺、麺類"],["국어","国語"],["국적","国籍"],["국제","国際"],["군인","軍人"],["굽다","焼く"],["권","～巻"],["귀","耳"],["귀엽다","かわいい"],["규칙","規則"],["귤","みかん"],["그","その"],["그거","それ"],["그것","それ"],["그곳","そこ"],["그날","その日"],["그냥","そのまま、ただ"],["그동안","その間、これまで"],["그들","彼ら"],["그때","そのとき、当時"],["그래","うん、そう（相づち）"],["그래서","それで、そうして"],["그램","グラム"],["그러나","しかし、けれど"],["그러니까","だから、そうだから"],["그러면","そうなら、それでは"],["그런","そんな"],["그런데","ところで、ところが"],["그럼","では"],["그렇게","そのように"],["그렇구나","なるほど、そうなんだ"],["그렇다","そうだ"],["그렇습니다","そうです"],["그렇지만","そうだけれど、しかし"],["그릇","器、容器、食器"],["그리고","そして"],["그리다","（絵を）描く"],["그림","絵"],["그만","それくらいで、それで"],["그분","そのかた"],["그저께","おととい"],["그중","その中"],["그쪽","そちら、そのかた"],["그치다","終わる、止む"],["극장","劇場、映画館"],["근처","近所"],["글","文章、文字"],["글쎄요","そうですね、どうでしょうね"],["금방","すぐ、さっき"],["금연","禁煙"],["금요일","金曜日"],["금주","禁酒"],["급","級"],["급하다","急だ、緊急だ、急がれる"],["기간","期間"],["기다리다","待つ"],["기르다","育てる、養う"],["기름","油、ガソリン"],["기분","気分"],["기뻐하다","嬉しがる"],["기쁘다","嬉しい"],["기사","運転手、技士、記事"],["기숙사","寄宿舎、寮"],["기억하다","記憶する、憶える"],["기온","気温"],["기자","記者"],["기차","汽車"],["기침","咳"],["기타","その他"],["긴장되다","緊張する"],["길","道"],["길다","長い"],["김","海苔"],["김밥","のり巻き"],["김치","キムチ"],["김치찌개","キムチ鍋"],["김포공항","金浦空港"],["까만색","黒、黒色"],["까맣다","黒い"],["깎다","削る、そぐ"],["깜짝","はっと（驚く）"],["깨끗하다","清潔だ、きれいだ"],["깨다","割る、壊す"],["깨지다","割れる、壊れる"],["꺼내다","取り出す"],["껌","ガム"],["꼭","必ず、絶対に"],["꽃","花"],["꽃집","花屋"],["꾸다","（夢を）見る、夢見る"],["꿈","夢"],["끄다","消す、止める"],["끓이다","沸かす、煮る"],["끝","終わり"],["끝나다","終わる"],["끝내다","終える、済ませる"],["끼다","霧が立ち込める、差し込む"],["나","僕、わたし、～や"],["나가다","出て行く"],["나누다","分ける"],["나다","出る"],["나라","国"],["나무","木"],["나빠지다","悪くなる"],["나쁘다","悪い"],["나오다","出て来る、あらわれる"],["나이","歳、年齢"],["나중","（時間や順序が）後"],["나타나다","あらわれる"],["나흘","４日"],["낚시","釣り"],["날","日"],["날씨","天気"],["날짜","日付"],["남","男"],["남기다","残す"],["남녀","男女"],["남대문시장","南大門市場"],["남동생","弟"],["남미","南米"],["남북","南北"],["남자","男"],["남쪽","南"],["남편","夫"],["남학생","男子学生"],["낮","昼、日中"],["낮다","低い"],["내","私の、僕の、おれの"],["내가","僕が、私が"],["내과","内科"],["내년","来年"],["내다","出す、起こす"],["내려가다","下がって行く、下がる、降りて行く"],["내려오다","下がって来る、降りて来る"],["내리다","下がる、降りる、降る"],["내용","内容"],["내일","明日"],["냄비","鍋"],["냄새","におい"],["냉면","冷麺"],["냉장고","冷蔵庫"],["너","きみ、おまえ"],["너무","あまりにも、とても"],["넓다","広い"],["넘다","越える、過ぎる"],["넘어지다","倒れる"],["넣다","入れる"],["네","はい、４つの～"],["넥타이","ネクタイ"],["넷","4"],["넷째","第４の～、４番目の"],["년","～年"],["노란색","黄色"],["노랗다","黄色い"],["노래","歌"],["노래방","カラオケ店"],["노래하다","歌う"],["노력하다","努力する"],["노트","ノート"],["녹색","緑色"],["녹차","緑茶"],["놀다","遊ぶ"],["놀라다","驚く"],["농구","バスケットボール"],["높다","高い"],["놓다","置く"],["누가","誰が"],["누구","誰"],["누나","姉（弟から見て）"],["누르다","押す"],["눈","目、雪"],["눈물","涙"],["눈사람","雪だるま"],["눈싸움","雪合戦"],["눕다","横になる、寝る"],["뉴스","ニュース"],["뉴욕","ニューヨーク"],["느끼다","感じる"],["느낌","感じ、気持ち"],["느리다","（速度が）遅い"],["늘","いつも、ずっと"],["늘다","増える、増す"],["능력","能力"],["늦다","（時間的に）遅い、遅れる"],["늦잠","寝坊"],["님","～様"],["다","全部"],["다녀오다","行って来る"],["다니다","通う"],["다르다","違う、異なる"],["다른","別の～、違う～"],["다리","脚、足、橋"],["다섯","5"],["다시","再び、また"],["다음","次、後"],["다음달","来月、翌月"],["다음주","来週"],["다음해","翌年"],["다이어트","ダイエット"],["다치다","けがする、触れる"],["닦다","磨く、拭く"],["단어","単語"],["단점","短所、欠点"],["닫다","閉める"],["닫히다","閉まる"],["달","～ヶ月、月"],["달걀","卵"],["달다","甘い"],["달러","ドル"],["달력","カレンダー、暦"],["달리다","走る"],["닭","にわとり"],["닭고기","鶏肉"],["닮다","似る"],["담그다","漬ける"],["담배","たばこ"],["답장","返信、返事"],["당근","にんじん"],["당신","あなた"],["대","～台"],["대답","答え"],["대답하다","返事する、答える"],["대부분","大部分、ほとんど"],["대사관","大使館"],["대학","大学"],["대학교","大学校"],["대학생","大学生"],["대학원","大学院"],["대학원생","大学院生"],["대한민국","大韓民国"],["대화","対話"],["대회","大会"],["댁","お宅"],["더","もっと、もう"],["더럽다","汚い"],["더운물","お湯"],["덕분","おかげ"],["덥다","暑い"],["덮다","覆う、かぶせる"],["데리다","連れる"],["데이트","デート"],["도로","道路"],["도서관","図書館"],["도시","都市"],["도와주다","助けてあげる、助ける"],["도움","助け"],["도착","到着"],["도착하다","到着する、着く"],["도쿄","東京"],["독서","読書"],["독서실","読書室"],["독서하다","読書する"],["독일","ドイツ"],["돈","お金"],["돌아가다","帰って行く"],["돌아오다","帰って来る"],["돕다","助ける、手伝う"],["동네","町内、ご近所"],["동대문시장","東大門市場"],["동물","動物"],["동생","弟・妹"],["동아리","愛好会、サークル"],["동안","～の間"],["동양","東洋"],["동전","硬貨、小銭"],["동쪽","東、東側"],["돼지","豚"],["돼지고기","豚肉"],["되다","～になる"],["된장","味噌"],["된장국","味噌汁"],["된장찌개","テンジャンチゲ、味噌鍋"],["두","２つの～"],["두껍다","厚い"],["두다","置く"],["두부","豆腐"],["두부찌개","豆腐チゲ"],["둘","2"],["둘째","第２の～、２番目の～"],["뒤","後ろ、裏"],["뒤쪽","後ろ、後ろの方、後側"],["드라마","ドラマ"],["드리다","差し上げる"],["드시다","召し上がる"],["듣기","聞くこと、聞き取り"],["듣다","聞く"],["들","～たち、～ども"],["들다","持つ、入る"],["들어가다","入って行く、入る"],["들어오다","入って来る、入る"],["등","背、など"],["등산","登山"],["등산복","登山服"],["등산화","登山靴"],["디브이디","DVD"],["디자인","デザイン"],["따뜻하다","暖かい"],["따라가다","ついて行く、従う"],["따라오다","ついて来る"],["따로","別に、別途"],["따르다","従う"],["딸","娘"],["딸기","いちご"],["땀","汗"],["때","時"],["때문","～のため、～だから"],["떠나다","発つ、去る"],["떠들다","騒ぐ"],["떡","餅"],["떡국","トック、餅入りスープ"],["떡볶이","トッポギ"],["떨어지다","落ちる"],["또","また、再び"],["또는","または"],["똑같다","全く同じだ、そっくりだ"],["똑바로","まっすぐに、しっかり"],["뛰다","駆ける、走る"],["뜨겁다","熱い"],["뜨다","(目を)開く"],["뜻","意味、こころざし"],["라디오","ラジオ"],["라면","ラーメン"],["러시아","ロシア"],["로션","ローション、化粧水"],["마늘","にんにく"],["마르다","乾く"],["마리","～匹、～頭"],["마시다","飲む"],["마음","心、気持ち"],["마지막","最後"],["마치다","終わる、終える"],["마흔","40"],["막히다","詰まる、つかえる"],["만","万"],["만나다","会う"],["만두","ぎょうざ"],["만들다","作る"],["만일","万一"],["만지다","触る、触れる"],["만화","漫画"],["많다","多い"],["많이","多く、たくさん"],["말","言葉、話"],["말씀","お言葉"],["말씀하다","お話する、おっしゃる"],["말하기","しゃべること、話、会話"],["말하다","話す、しゃべる"],["맑다","清い、澄んでいる"],["맛","味"],["맛없다","おいしくない、不味い"],["맛있다","おいしい"],["맞다","合う、合っている、正しい"],["맞습니다","そうです"],["맞아요","その通りです"],["맞은편","向こう側、向かい"],["매다","結ぶ、締める"],["매우","とても、非常に"],["매일","毎日"],["매주","毎週"],["맥주","ビール"],["맵다","辛い"],["머리","頭、髪"],["먹다","食べる"],["먼저","まず、先に"],["멀다","遠い"],["멋있다","素敵だ、格好いい"],["메뉴","メニュー"],["메다","担ぐ、背負う"],["메모","メモ"],["메시지","メッセージ"],["멕시코","メキシコ"],["며칠","何日"],["면도","かみそり、ひげそり"],["명","～名"],["명절","年中行事"],["몇","いくつの～"],["모두","すべて、みな"],["모레","あさって"],["모르겠습니다","知りません、わかりません"],["모르다","知らない"],["모시다","お連れする、お仕えする"],["모양","形、形状、格好、スタイル"],["모으다","集める"],["모이다","集まる"],["모임","集まり、集会"],["모자","帽子"],["목","首、喉"],["목걸이","ネックレス、首飾り"],["목소리","声"],["목요일","木曜日"],["목욕","沐浴、入浴"],["목욕하다","入浴する"],["목적","目的"],["몸","体、身体"],["몸살","疲労からくる病気"],["못하다","できない"],["몽골","モンゴル"],["무","大根"],["무겁다","重い"],["무궁화","むくげ"],["무료","無料"],["무릎","ひざ"],["무리","無理"],["무섭다","怖い"],["무슨","何の～、どんな～"],["무엇","何"],["무엇이","何が"],["무역","貿易"],["무용","舞踊、踊り、ダンス"],["무척","とても、非常に"],["문","門、戸、ドア"],["문구점","文具店"],["문장","文章"],["문제","問題"],["문화","文化"],["묻다","尋ねる、聞く"],["물","水"],["물건","物、物品"],["물론","もちろん"],["물어보다","尋ねてみる、聞いてみる、聞く"],["뭐","何"],["미국","米国、アメリカ"],["미래","未来"],["미리","前もって、あらかじめ"],["미술","美術"],["미술관","美術館"],["미안하다","すまない"],["미안합니다","すみません"],["미용실","美容室"],["미터","メートル"],["민속촌","民俗村"],["밀가루","小麦粉"],["밀리다","滞る"],["밑","下、底"],["바꾸다","変える"],["바뀌다","変わる"],["바나나","バナナ"],["바다","海"],["바닷가","海辺、浜辺"],["바라다","願う"],["바람","風"],["바로","すぐに、まさに"],["바르다","塗る、つける"],["바쁘다","忙しい"],["바이올린","バイオリン"],["바지","ズボン"],["박물관","博物館"],["박수","拍手"],["밖","外"],["반","半分、班"],["반갑다","嬉しい"],["반갑습니다","お会いできて嬉しいです"],["반년","半年"],["반달","半月"],["반바지","半ズボン"],["반지","指輪"],["반찬","おかず"],["받다","受ける、受け取る"],["발","足"],["발가락","足の指"],["발음","発音"],["발전","発展"],["발표","発表"],["밝다","明るい"],["밤","夜"],["밥","ご飯、食事"],["방","部屋"],["방법","方法"],["방송","放送"],["방송국","放送局"],["방학","（夏休み、冬休みなど、学校の長期の）休み"],["배","お腹、船、梨"],["배고프다","空腹だ"],["배구","バレーボール"],["배달","配達、出前"],["배부르다","お腹いっぱいだ、満腹だ"],["배우","俳優"],["배우다","習う、教わる"],["배탈","腹痛"],["백","100"],["백화점","百貨店、デパート"],["버리다","捨てる"],["버스","バス"],["번","～回"],["번호","番号"],["벌다","（お金を）稼ぐ、儲ける"],["벌써","すでに、もう"],["벗다","脱ぐ"],["벚꽃","桜"],["베이징","北京"],["베트남","ベトナム"],["벽","壁"],["변호사","弁護士"],["별","星"],["별로","別に"],["병","（瓶）～本、病気"],["병원","病院"],["보내다","送る、過ごす"],["보다","見る、より"],["보도","報道"],["보이다","見える、見せる"],["보통","ふつう、一般的に"],["복숭아","桃"],["복잡하다","複雑だ、（道が）混雑している"],["볶다","炒める、煎る"],["볶음밥","チャーハン"],["볼펜","ボールペン"],["봄","春"],["봉지","袋"],["봉투","封筒"],["뵙다","お目にかかる"],["부동산","不動産"],["부드럽다","柔らかい、やさしい"],["부르다","人を呼ぶ、歌を歌う"],["부모","父母"],["부부","夫婦"],["부산","釜山"],["부업","副業"],["부엌","台所"],["부인","夫人"],["부장","部長"],["부지런하다","勤勉だ、まめだ"],["부치다","（郵便物を）送る、（チヂミ、プッチムゲなどを）焼く"],["부탁","お願い"],["부탁하다","依頼する"],["북쪽","北、北側"],["분","～名（目上の人を数える）、～分（時間）"],["분위기","雰囲気"],["불","火、明かり、電気"],["불고기","プルコギ、焼き肉"],["불다","（風が）吹く、（口笛、楽器などを）吹く"],["불편하다","不便だ、体調が悪い"],["붓다","（液体を）注ぐ"],["붙다","くっつく、（試験に）受かる"],["붙이다","つける、貼る"],["브라질","ブラジル"],["블라우스","ブラウス"],["비","雨"],["비누","石鹸"],["비디오","ビデオ"],["비밀","秘密"],["비빔밥","ビビンバ"],["비슷하다","似ている"],["비싸다","（値段が）高い"],["비행기","飛行機"],["비행장","飛行場"],["빌딩","ビル"],["빌리다","借りる、貸す"],["빠르다","（速度が）速い"],["빨간색","赤色、赤"],["빨갛다","赤い"],["빨다","洗濯する"],["빨래","洗濯"],["빨리","はやく"],["빵","パン"],["빵집","パン屋、ベーカリー"],["빼다","のける、引く、抜く"],["뿐","だけ、のみ、ばかり"],["사","4"],["사거리","四つ角"],["사계절","四季"],["사고","事故"],["사과","りんご"],["사다","買う"],["사람","人"],["사랑","愛"],["사랑하다","愛する"],["사례","事例"],["사무실","事務室"],["사물","物事"],["사십","40"],["사업가","事業家"],["사용하다","使用する"],["사원","社員"],["사월","４月"],["사이","間"],["사이다","サイダー"],["사이즈","サイズ"],["사인하다","サインする"],["사장","社長"],["사전","事典、辞典、辞書"],["사진","写真"],["사진기","写真機、カメラ"],["사촌","いとこ"],["사탕","飴、キャンディー"],["사흘","３日、３日間"],["산","山"],["산책","散策、散歩"],["살","～歳"],["살다","生きる、暮らす、住む"],["삼","3"],["삼거리","三つ角、三叉路"],["삼계탕","サムゲタン（蓼鶏湯）"],["삼십","30"],["삼월","３月"],["삼촌","（父方の）おじ"],["상관","関係"],["상자","箱、ボックス"],["상처","傷"],["상품","商品"],["새","新しい、鳥"],["새로","新しく"],["새벽","深夜、未明、明け方"],["새우","えび"],["색","色"],["색깔","色"],["샌드위치","サンドウィッチ"],["생각","考え、思想"],["생각되다","考えられる、思われる"],["생각하다","考える"],["생기다","生じる"],["생선","魚（料理）"],["생신","（目上の人の）誕生日"],["생일","誕生日"],["생활","生活"],["샤워하다","シャワーする"],["샴푸","シャンプー"],["서다","立つ、（時計の針などが）止まる"],["서로","互いに、共に"],["서류","書類"],["서른","30"],["서비스","サービス"],["서양","西洋"],["서울","ソウル"],["서울역","ソウル駅"],["서점","書店、本屋"],["서쪽","西、西側"],["선물","プレゼント"],["선배","先輩"],["선생님","先生"],["선수","選手"],["선택하다","選択する、選ぶ"],["선풍기","扇風機"],["설거지","皿洗い"],["설날","（旧正月の）元旦"],["설렁탕","ソルロンタン"],["설명","説明"],["설명하다","説明する"],["설악산","雪岳山"],["설탕","砂糖"],["섬","島"],["성","姓、名字"],["성격","性格"],["성함","お名前"],["세계","世界"],["세수하다","洗顔する"],["세우다","たてる"],["세일하다","セールする"],["세탁기","洗濯機"],["세탁소","クリーニング屋"],["센터","センター"],["센티미터","センチメートル"],["셋","3"],["셋째","第３の～、３番目の～"],["소","牛"],["소개","紹介"],["소개하다","紹介する"],["소고기","牛肉"],["소금","塩"],["소리","音、声"],["소설","小説"],["소설가","小説家"],["소식","消息、便り"],["소파","ソファー"],["소포","小包"],["소풍","遠足"],["소화제","消化剤"],["속","中"],["손","手"],["손가락","手の指"],["손님","お客さま"],["손수건","ハンカチ"],["송이","（花などの）房"],["쇼핑","ショッピング"],["수건","タオル、手ぬぐい"],["수도","首都"],["수돗물","水道水"],["수박","すいか"],["수술하다","手術する"],["수업","授業"],["수영","水泳"],["수영복","水着"],["수영장","プール"],["수요일","水曜日"],["수저","箸とスプーン"],["수첩","手帳"],["수학","数学"],["숙제","宿題"],["순서","順序、順番"],["숟가락","スプーン"],["술","酒"],["쉬다","休む"],["쉰","50"],["쉽다","簡単だ"],["슈퍼마켓","スーパーマーケット"],["스물","20"],["스웨터","セーター"],["스케이트","スケート"],["스키","スキー"],["스키장","スキー場"],["스타","スター"],["스타킹","ストッキング"],["스트레스","ストレス"],["스페인어","スペイン語"],["스포츠","スポーツ"],["슬퍼하다","悲しむ"],["슬프다","悲しい"],["습관","習慣、くせ"],["시","市、時"],["시간","時間"],["시간표","時間表、時刻表"],["시계","時計"],["시골","いなか"],["시끄럽다","うるさい"],["시내","市内、小川"],["시다","酸っぱい"],["시디","CD"],["시민","市民"],["시설","施設"],["시외","市外"],["시원하다","涼しい、爽快だ"],["시월","１０月"],["시작","始まり"],["시작되다","始まる"],["시작하다","始める"],["시장","市場"],["시청","市役所"],["시키다","～させる、注文する"],["시험","試験"],["식당","食堂"],["식사","食事"],["식탁","食卓"],["신","新、神"],["신다","履く"],["신문","新聞"],["신발","履物、靴"],["신청서","申請書"],["신청하다","申請する"],["실례","失礼"],["실례하다","失礼する"],["실수","失敗、ミス"],["싫다","嫌いだ"],["싫어하다","嫌う"],["심하다","ひどい、（度が）過ぎる"],["십","10"],["십이월","１２月"],["십일월","１１月"],["싱겁다","（味が）薄い"],["싶다","～したい"],["싸다","包む、安い"],["싸우다","けんかする、争う"],["쌀","米"],["쌀밥","米飯、ごはん"],["쌓이다","積もる"],["썰다","切る"],["쓰기","書くこと、書き取り"],["쓰다","書く、使う、めがねをかける"],["쓰레기","ごみ"],["쓰이다","使われる、使える"],["씨","～氏"],["씩","～ずつ"],["씹다","噛む"],["씻다","洗う"],["아가씨","お嬢さん"],["아기","赤ちゃん、幼児"],["아까","さっき"],["아내","妻"],["아뇨","いいえ"],["아니다","～でない"],["아니오","いいえ"],["아니요","いいえ"],["아들","息子"],["아랍어","アラビア語"],["아래","下"],["아름답다","美しい"],["아마","多分、おそらく"],["아무","何（もない）、誰（もいない）"],["아버님","お父様"],["아버지","父"],["아빠","パパ"],["아시아","アジア"],["아이","子供"],["아이스크림","アイスクリーム"],["아저씨","おじさん"],["아주","とても、完全に"],["아주머니","おばさん"],["아줌마","おばさん"],["아직","まだ、いまだに"],["아침","朝、朝食"],["아침밥","朝ご飯"],["아침식사","朝食"],["아파트","アパート、マンション"],["아프다","痛い、病気だ"],["아프리카","アフリカ"],["아홉","9"],["아흔","90"],["악기","楽器"],["안","～しない、中"],["안경","眼鏡"],["안내하다","案内する"],["안녕하세요","こんにちは"],["안녕하십니까","こんにちは"],["안다","抱く"],["안전하다","安全だ"],["앉다","座る"],["알다","知る、分かる"],["알리다","知らせる"],["알맞다","ふさわしい、適当だ"],["알았습니다","わかりました"],["앞","前"],["애","子供"],["액세서리","アクセサリ"],["야구","野球"],["야채","野菜"],["약","約～、薬"],["약간","若干、少し"],["약국","薬局"],["약사","薬剤師"],["약속","約束"],["얇다","薄い"],["양","量"],["양말","靴下"],["양복","スーツ、背広"],["양식","洋食"],["양파","たまねぎ"],["얘기하다","話す"],["어깨","肩"],["어느","どの～"],["어둡다","暗い"],["어디","どこ"],["어떤","どんな"],["어떻게","どのように"],["어떻다","どうだ"],["어떻습니까?","どうですか"],["어렵다","難しい"],["어른","大人"],["어리다","幼い"],["어린이","子供"],["어머","まあ、おや（女性が使う）"],["어머니","母"],["어머님","お母様"],["어서","はやく"],["어울리다","似合う、仲良く付き合う"],["어저께","昨日"],["어제","きのう"],["어젯밤","昨夜"],["언니","（妹から見て）姉"],["언제","いつ"],["언제나","いつも、いつでも"],["얼굴","顔"],["얼마나","いくらほど、どのくらい"],["얼음","氷"],["엄마","ママ"],["없다","ない、いない"],["없이","～なしで"],["에어컨","エアコン、クーラー"],["엔","円"],["엘리베이터","エレベーター"],["여권","旅券、パスポート"],["여기","ここ"],["여기저기","あちこち"],["여덟","8"],["여동생","妹"],["여든","80"],["여러","多くの"],["여러가지","いろいろ"],["여러분","皆様"],["여름","夏"],["여보세요","もしもし"],["여섯","6"],["여자","女性"],["여학생","女子学生"],["여행","旅行"],["여행사","旅行社"],["역","駅"],["역사","歴史"],["연락처","連絡先"],["연세","お歳（「年齢」の尊敬語）"],["연습","練習"],["연습하다","練習する"],["연예인","芸能人"],["연필","鉛筆"],["연휴","連休"],["열","熱、10"],["열다","開く（あく）、開ける、（物事を）始める"],["열리다","開く（ひらく）、開かれる、（物事が）始まる"],["열쇠","鍵"],["열심히","熱心に、懸命に"],["열차","列車"],["엽서","はがき"],["영","ゼロ"],["영국","英国、イギリス"],["영상","映像"],["영어","英語"],["영어회화","英会話"],["영하","零下、氷点下"],["영화","映画"],["영화관","映画館"],["영화배우","映画俳優"],["영화표","映画のチケット"],["옆","横"],["예","はい"],["예문","例文"],["예쁘다","きれいだ"],["예순","60"],["예약","予約"],["옛날","昔"],["오","5"],["오늘","きょう"],["오다","来る"],["오래","長く、ずっと"],["오래간만","久しぶり"],["오래간만입니다","お久しぶりです"],["오랜만","久しぶり"],["오랜만에","久しぶりに"],["오랫동안","長い間"],["오렌지","オレンジ"],["오르다","上る、登る"],["오른쪽","右、右側"],["오리","あひる、鴨"],["오빠","（妹から見て）兄"],["오십","50"],["오월","５月"],["오이","きゅうり"],["오전","午前"],["오징어","いか（烏賊）"],["오후","午後"],["올라가다","上って行く"],["올라오다","上って来る"],["올려놓다","乗せる"],["올림픽","オリンピック"],["올해","今年"],["옮기다","移す、翻訳する"],["옷","服"],["옷가게","服屋、衣服店、洋服店"],["옷장","洋服だんす"],["와이셔츠","ワイシャツ"],["왜","なぜ、どうして"],["왜냐하면","なぜかというと、なぜならば"],["외국","外国"],["외국어","外国語"],["외국인","外国人"],["외롭다","（一人ぼっちで）さびしい、心細い"],["외삼촌","（母方の）おじ"],["외숙모","（母方の）おば"],["외출하다","外出する"],["외할머니","（母方の）祖母"],["외할아버지","（母方の）祖父"],["왼쪽","左、左側"],["요금","料金"],["요르단","ヨルダン"],["요리","料理"],["요일","曜日"],["요즘","この頃、近ごろ"],["우리","我々"],["우리나라","韓国、わが国"],["우산","雨傘、傘"],["우선","まず、最初に"],["우유","牛乳"],["우체국","郵便局"],["우표","切手"],["운동","運動"],["운동복","体操服、スポーツウェア"],["운동선수","スポーツ選手"],["운동장","運動場"],["운동하다","運動する、スポーツする"],["운동화","運動靴"],["운전하다","運転する"],["울다","（人が）泣く、（動物が）鳴く、（鐘などが）鳴る"],["울리다","泣かせる、鳴かせる、鳴らす"],["움직이다","動く"],["웃기다","笑わせる"],["웃다","笑う"],["원","ウォン（韓国の貨幣単位）"],["원피스","ワンピース"],["원하다","願う、望む"],["월","～（ヶ）月"],["월급","月給、給料"],["월드컵","ワールドカップ"],["월세","（月払いの）家賃、賃料"],["월요일","月曜日"],["웬일","何事、どうしたこと"],["위","上"],["위치","位置"],["위하다","（～のために）する"],["위험하다","危険だ"],["유럽","ヨーロッパ"],["유리","ガラス"],["유명하다","有名だ"],["유월","６月"],["유학","留学"],["유학생","留学生"],["유행","流行"],["육","6"],["육십","60"],["은행","銀行"],["은행원","銀行員"],["음료수","飲料水、清涼飲料水、ジュース"],["음반","音盤"],["음식","食べ物、料理"],["음악","音楽"],["음악가","音楽家"],["응","うん（返事）"],["의미","意味"],["의사","医者"],["의자","いす"],["이","歯、この、２"],["이거","これ"],["이것","これ"],["이곳","ここ"],["이따가","後で、後ほど"],["이런","こんな～"],["이렇게","こんなに、このように"],["이렇다","こうだ"],["이름","名前"],["이메일","ｅメール、電子メール"],["이모","（母方の）おば"],["이모부","（母方の）おじ"],["이번","今回、こんど"],["이분","この方"],["이사","引っ越し"],["이상","以上"],["이상하다","おかしい、変だ"],["이십","20"],["이야기","話、物語"],["이야기하다","話す"],["이용","利用"],["이용하다","利用する"],["이월","２月"],["이유","理由"],["이제","いまや、もう"],["이집트","エジプト"],["이쪽","こちら、この方"],["이틀","２日、２日間"],["이해","理解"],["이해하다","理解する"],["인","～人"],["인구","人口"],["인기","人気"],["인기스타","人気スター"],["인도","インド"],["인사","挨拶"],["인사하다","挨拶する"],["인삼","人参、高麗人参"],["인상","印象"],["인천","インチョン（仁川）"],["인터넷","インターネット"],["인터뷰하다","インタビューする"],["인형","人形"],["일","1、日"],["일곱","7"],["일기","日記"],["일기예보","天気予報"],["일본","日本"],["일본드라마","日本のドラマ"],["일본말","日本語"],["일본사람","日本人"],["일본어","日本語"],["일본요리","日本料理"],["일상생활","日常生活"],["일식","日本料理"],["일어나다","起きる、立つ、起こる"],["일어서다","立ち上がる"],["일요일","日曜日"],["일월","１月"],["일주일","１週間"],["일찍","（時間的に）はやく"],["일하다","働く"],["일흔","70"],["읽기","読むこと、読解"],["읽다","読む"],["잃다","失う"],["잃어버리다","失くしてしまう"],["입","口"],["입구","入り口"],["입다","着る"],["입원하다","入院する"],["입학","入学"],["있다","ある、いる"],["잊다","忘れる"],["잊어버리다","忘れる、忘れてしまう"],["자","さあ"],["자기","自己、自分"],["자다","寝る"],["자동차","自動車、車"],["자동차회사","自動車会社"],["자료","資料"],["자르다","切る"],["자리","座席、場所"],["자신","自身"],["자연","自然"],["자유","自由"],["자장면","ジャージャー麺"],["자전거","自転車"],["자주","たびたび、しょっちゅう"],["작년","昨年"],["작다","小さい"],["작은아버지","父の弟、おじ"],["작은어머니","父の弟の妻、おば"],["잔","～杯"],["잔치","パーティ、祝宴"],["잘","よく、上手に"],["잘못","間違って"],["잘생기다","ハンサムだ"],["잘하다","上手だ"],["잠","寝ること、睡眠"],["잠깐","しばらく、ちょっと"],["잠시","しばらく、ちょっと"],["잠자다","寝る、眠る"],["잡다","つかむ、握る"],["잡수시다","召し上がる"],["잡지","雑誌"],["장","～枚"],["장갑","手袋"],["장마","梅雨"],["장마철","梅雨時"],["장미","バラ"],["장소","場所"],["장점","長所"],["재료","材料"],["재미없다","面白くない"],["재미있다","面白い"],["재킷","ジャケット"],["저","あの"],["저거","あれ"],["저것","あれ"],["저곳","あそこ"],["저기","あそこ"],["저녁","夕方、夜、夕ご飯"],["저녁식사","夕食"],["저렇게","あのように"],["저분","あの方"],["저쪽","あちら、あの方"],["저희","私ども"],["적","的"],["적다","少ない、記す"],["전","全、前"],["전공","専攻"],["전기자동차","電気自動車"],["전자사전","電子辞書"],["전하다","伝える"],["전혀","まったく、全然"],["전화","電話"],["전화기","電話機"],["전화번호","電話番号"],["절","寺"],["절대","絶対"],["젊다","若い"],["점","点"],["점수","点数"],["점심","昼食、昼ごはん"],["점심시간","昼食時間"],["점심식사","昼食"],["점원","店員"],["점퍼","ジャンパー"],["젓가락","箸"],["정거장","停車場、駅"],["정도","程度"],["정류장","停留所、バス停"],["정리하다","整理する"],["정말","本当に"],["정문","正門"],["정보","情報"],["정하다","定める"],["제가","私が"],["제목","題名、タイトル"],["제일","いちばん、最も"],["제주도","済州島"],["조금","少し"],["조사하다","調査する"],["조선","朝鮮"],["조선말","朝鮮語"],["조선어","朝鮮語"],["조심하다","注意する"],["조용하다","静かだ"],["조용히","静かに"],["조카","甥（おい）"],["졸업","卒業"],["졸업하다","卒業する"],["좀","ちょっと、すこし"],["좀더","もう少し、もうちょっと"],["좁다","狭い"],["종로","鍾路"],["종류","種類"],["종업원","従業員"],["종이","紙"],["종일","終日、一日中"],["좋다","良い、好きだ"],["좋아하다","好む、好きだ"],["죄송하다","申し訳ない"],["주","週"],["주다","あげる、くれる"],["주로","主に"],["주말","週末"],["주머니","ポケット、小袋"],["주무시다","お休みになる"],["주문하다","注文する"],["주변","周辺、周り"],["주부","主婦"],["주사","注射"],["주소","住所"],["주스","ジュース"],["주위","周囲、周り"],["주인","主人、持ち主、マスター"],["주차장","駐車場"],["주차하다","駐車する"],["주황색","オレンジ色"],["죽","おかゆ"],["죽다","死ぬ"],["준비","用意、準備"],["준비하다","準備する"],["줄","列、線、ひも"],["줄다","減る"],["중","中"],["중국","中国"],["중국어","中国語"],["중국집","中華料理店"],["중식","中国料理"],["중심","中心"],["중요","重要"],["중요하다","重要だ"],["중학교","中学校"],["중학생","中学生"],["즐거워하다","楽しがる"],["즐겁다","楽しい"],["즐기다","楽しむ"],["증세","病状"],["지각","遅刻"],["지갑","財布"],["지금","今"],["지나다","過ぎる、経つ"],["지난달","先月"],["지난번","前回"],["지난주","先週"],["지내다","過ごす、暮らす"],["지다","負ける"],["지도","地図"],["지방","地方"],["지우개","消しゴム、黒板消し"],["지키다","守る"],["지하","地下"],["지하도","地下道"],["지하철","地下鉄"],["지하철역","地下鉄の駅"],["직업","職業"],["직원","職員"],["직장","職場"],["직접","直接"],["진달래","ツツジ"],["질","質"],["질문","質問"],["질문하다","質問する"],["짐","荷物"],["집","家、店"],["짓다","作る"],["짜다","組み立てる、（計画を）立てる"],["짜리","価値があるもの（○ウォン硬貨/紙幣/切手など）"],["짧다","短い"],["쪽","ページ"],["쯤","～ごろ"],["찌개","チゲ"],["찍다","突き刺す、（写真を）撮る、（印鑑を）押す、（物の端に液体を）つける"],["차","車、茶"],["차갑다","冷たい"],["차다","蹴る"],["차리다","（食事の席を）準備する、整える、（気持ち、精神を）しっかりさせる"],["착하다","（人柄が）良い、善良だ、やさしい"],["참","本当に、非常に"],["창문","窓"],["찾다","探す、（銀行などでお金を）おろす、（人を）訪ねる"],["찾아가다","（人に会いに、用事を済ませに）行く、（落し物などを）引き取って持って行く"],["찾아오다","（人に会いに、用事を済ませに）来る、（落し物などを）引き取って持って来る"],["채소","野菜"],["책","本"],["책방","本屋"],["책상","机"],["책임","責任"],["책장","本棚"],["처음","最初、初めて"],["처음 뵙겠습니다","はじめまして"],["천","1000"],["천천히","ゆっくり"],["철","季節、旬"],["첫","初～、初めての～"],["첫째","最初の～、第１の～、１番目の～"],["청바지","（青い）ジーパン"],["청소기","掃除機"],["청소하다","掃除する"],["초","秒"],["초대하다","招待する"],["초등학교","初等学校（＝小学校）"],["초등학생","小学生"],["초록색","緑色"],["초콜릿","チョコレート"],["촬영하다","撮影する"],["최고","最高"],["추다","踊る"],["추석","チュソク（秋夕）、旧暦のお盆"],["추억","思い出"],["축구","サッカー"],["축제","祝祭、お祭り"],["축하","祝賀"],["축하하다","祝う"],["축하합니다","おめでとうございます"],["출구","出口"],["출근하다","出勤する"],["출발","出発"],["출발하다","出発する"],["출장","出張"],["춤","踊り、ダンス"],["춤추다","踊りを踊る"],["춥다","寒い"],["취미","趣味"],["취소하다","取り消す"],["취직하다","就職する"],["층","～階"],["치과","歯科"],["치료하다","治療する"],["치마","スカート、（韓服の）チマ"],["치약","歯磨き粉"],["친구","友達"],["친절하다","親切だ"],["친척","親戚"],["친하다","親しい"],["칠","7"],["칠십","70"],["칠월","７月"],["칠판","黒板"],["침대","ベッド、寝台"],["칫솔","歯ブラシ"],["카드","カード"],["카레","カレー"],["카메라","カメラ"],["카페","カフェ、喫茶店"],["칼","刃物、刀、包丁、カッター"],["캐나다","カナダ"],["커피","コーヒー"],["커피숍","コーヒーショップ、喫茶店"],["컴퓨터","コンピューター、パソコン"],["컵","カップ"],["케이크","ケーキ"],["켜다","つける、（電源を）入れる"],["코","鼻"],["코트","コート"],["코피","鼻血"],["콜라","コーラ"],["콧노래","鼻歌"],["콧물","鼻水"],["콩","豆、大豆"],["크기","大きさ、サイズ"],["크다","大きい"],["크리스마스","クリスマス"],["큰아버지","父の（一番上の）兄、伯父"],["큰어머니","父の（一番上の）兄の妻、伯母"],["키","背、身長"],["킬로그램","キログラム"],["킬로미터","キロメートル"],["타다","乗る"],["타월","タオル"],["탁구","卓球、ピンポン"],["태국","タイ"],["태권도","テコンドー"],["태어나다","うまれる"],["태풍","台風"],["택시","タクシー"],["탤런트","タレント、芸能人"],["터미널","ターミナル"],["테니스","テニス"],["테이블","テーブル"],["텔레비전","テレビ"],["토마토","トマト"],["토요일","土曜日"],["통","～通（手紙など）"],["통장","（預金）通帳"],["통하다","通じる"],["퇴근하다","退社する、帰宅する"],["특별히","特別に"],["특징","特徴"],["특히","特に"],["틀다","（スイッチを）入れる、つける"],["틀리다","間違う"],["티셔츠","Ｔシャツ"],["팀","チーム"],["파","ねぎ"],["파란색","青色、青"],["파랗다","青い"],["파티","パーティ"],["팔","腕、８"],["팔다","売る"],["팔리다","売れる"],["팔십","80"],["팔월","８月"],["패션","ファッション"],["퍼센트","パーセント"],["페이지","ページ"],["펜","ペン"],["펴다","広げる、伸ばす"],["편","～編（映画など）"],["편지","手紙"],["편하다","楽だ、気楽だ、便利だ"],["평양","ピョンヤン"],["평일","平日"],["포도","ぶどう"],["포장","包装、荷造り"],["표","券・切符類の総称、チケット"],["표현","表現"],["푹","ぐっすり"],["풀","草"],["풀다","解く"],["프랑스","フランス"],["프로그램","プログラム"],["프린트","プリント"],["피","血"],["피곤하다","疲れる"],["피다","咲く"],["피아노","ピアノ"],["피우다","咲かせる"],["피자","ピザ"],["필름","フィルム"],["필요","必要"],["필요하다","必要だ"],["필통","筆箱、筆入れ"],["하나","1"],["하늘","空"],["하늘색","空色、水色"],["하다","する、言う"],["하루","１日"],["하숙","下宿"],["하숙집","下宿屋、下宿先"],["하얀색","白色、白"],["하얗다","白い"],["하지만","しかし、けれど"],["학","つる"],["학교","学校"],["학기","学期"],["학년","学年"],["학생","学生"],["학생증","学生証"],["학원","塾"],["한","１つの～"],["한강","ハンガン（漢江）"],["한국","韓国"],["한국드라마","韓国ドラマ"],["한국말","韓国語"],["한국사람","韓国人"],["한국어","韓国語"],["한국요리","韓国料理"],["한글","ハングル"],["한번","一回、一度"],["한복","韓服"],["한식","韓国料理"],["한자","漢字"],["할머니","祖母、おばあさん"],["할아버지","祖父、おじいさん"],["할인","割引"],["함께","一緒に、共に"],["합격","合格"],["항상","いつも、常に"],["해","陽、太陽"],["해외","海外"],["해외여행","海外旅行"],["핸드폰","携帯電話"],["햄버거","ハンバーガー"],["햇빛","日光、日差し"],["행복","幸福、幸せ"],["행복하다","幸せだ、幸福だ"],["행사","行事"],["허리","腰"],["현금","現金"],["현재","現在"],["형","（弟から見て）兄"],["형님","お兄様、兄貴"],["형제","兄弟"],["호","～号"],["호랑이","虎"],["호주","オーストラリア、豪州"],["호텔","ホテル"],["혼자","独り"],["홈페이지","ホームページ"],["홍차","紅茶"],["화","怒り"],["화가","画家"],["화나다","怒る、腹が立つ"],["화내다","怒る、腹を立てる"],["화요일","火曜日"],["화장실","トイレ、化粧室"],["화장품","化粧品"],["화장하다","化粧する"],["확인하다","確認する"],["환영하다","歓迎する"],["환자","患者"],["회사","会社"],["회사원","会社員"],["회색","灰色"],["회의","会議"],["횡단보도","横断歩道"],["후","～後"],["후배","後輩"],["휴가","休暇"],["휴대전화","携帯電話"],["휴일","休日"],["휴지","ちり紙、トイレットペーパー"],["휴지통","ゴミ箱"],["흐리다","曇る"],["흰색","白色、白"],["힘","力"]];
-const SEC_SIZE = 30;
-const NUM_SEC = Math.ceil(WORDS.length / SEC_SIZE);
+const SEC_SIZE = 100;
+const NUM_SEC = Math.ceil(WORDS.length / SEC_SIZE);          // 17 (最後は71語)
+const SEC_PER_CH = 3;
+const NUM_CH = Math.ceil(NUM_SEC / SEC_PER_CH);              // 6
 const TYPE_LABEL = {kj:'韓日四択', jk:'日韓四択', ls:'音声四択'};
-const FAKE_NAMES = ['ハングルマスター','kpop_fan99','ソウル太郎','チェゴ先輩','noona_22','カナタ','TOPIK勇者','韓ドラ沼子','まんぷくキンパ','チンチャ氏','ペンギン midori','hangeul_dayo'];
 
 /* ================= STORAGE ================= */
 const store = {
   get(k, d){ try{ const v = localStorage.getItem('ktan_'+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem('ktan_'+k, JSON.stringify(v)); }catch(e){} }
 };
-let progress = store.get('progress', {});      // key -> {best, monthBest, month, rank, perfect}
+if(store.get('ver', 1) !== 2){ store.set('progress', {}); store.set('ver', 2); }   // Section構成変更に伴うリセット
+let progress = store.get('progress', {});
 let stats = store.get('stats', {plays:0, answered:0, correct:0});
-let wrongs = store.get('wrongs', []);          // word indices
+let wrongs = store.get('wrongs', []);
+let wrongCounts = store.get('wrongCounts', {});
 let settings = store.get('settings', {sound:true, rate:0.9});
+let nickname = store.get('nickname', 'あなた');
+let goals = store.get('goals', []);
+let playDates = store.get('playDates', []);
+let login = store.get('login', {last:null, total:0, streak:0, max:0});
+let d5 = store.get('d5', {pos:0, lap:0, date:null, left:5});
 
 /* ================= UTIL ================= */
 const $ = id => document.getElementById(id);
 function shuffle(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function dateKey(d){ return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(); }
 function monthKey(){ const d = new Date(); return d.getFullYear()+'-'+(d.getMonth()+1); }
-function chapterOf(si){ return Math.floor(si/3)+1; }
+const todayK = dateKey(new Date());
+
+/* ログイン日数の記録 */
+(function(){
+  if(login.last !== todayK){
+    const yd = new Date(); yd.setDate(yd.getDate()-1);
+    login.streak = (login.last === dateKey(yd)) ? login.streak+1 : 1;
+    login.total++; login.max = Math.max(login.max, login.streak); login.last = todayK;
+    store.set('login', login);
+  }
+})();
+/* 今日の5問の回数リセット */
+function d5Check(){ if(d5.date !== todayK){ d5.date = todayK; d5.left = 5; store.set('d5', d5); } }
 
 /* ================= CLOCK ================= */
 function tickClock(){ const d = new Date(); $('clock').textContent = d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); }
 tickClock(); setInterval(tickClock, 15000);
 
 /* ================= NAV ================= */
-const NAV_SCREENS = ['home','listen','league','profile','settings'];
+const NAV_SCREENS = ['home','listen','hub','league','major','profile','settings'];
+const NAV_BTN = {home:'nav-home', listen:'nav-listen', hub:'nav-hub', league:'nav-hub', major:'nav-hub', profile:'nav-profile', settings:'nav-settings'};
 let current = 'home';
 function go(name){
   stopTimer(); try{ speechSynthesis.cancel(); }catch(e){}
@@ -497,14 +597,16 @@ function go(name){
   if(NAV_SCREENS.includes(name)){
     nav.style.display = 'flex';
     document.querySelectorAll('#bottomnav button').forEach(b => b.classList.remove('on'));
-    const nb = $('nav-'+name); if(nb) nb.classList.add('on');
+    const nb = $(NAV_BTN[name]); if(nb) nb.classList.add('on');
   } else nav.style.display = 'none';
-  if(name === 'league') renderLeague();
   if(name === 'home') renderHome();
+  if(name === 'hub') renderHub();
+  if(name === 'league') renderLeague();
+  if(name === 'major') renderMajor();
   if(name === 'profile') renderProfile();
 }
 
-/* ================= MASCOT SVG ================= */
+/* ================= SVG部品 ================= */
 function mascotSVG(size){
   return `<svg width="${size}" height="${size}" viewBox="0 0 120 120">
     <ellipse cx="38" cy="92" rx="12" ry="7" fill="#e8865f"/>
@@ -513,74 +615,175 @@ function mascotSVG(size){
     <path d="M24 52 C12 56 10 70 18 76 C22 79 28 78 30 72 Z" fill="#8d6bb0"/>
     <path d="M96 52 C108 56 110 70 102 76 C98 79 92 78 90 72 Z" fill="#8d6bb0"/>
     <path d="M60 26 C40 26 33 44 35 60 C37 74 46 80 60 80 C74 80 83 74 85 60 C87 44 80 26 60 26 Z" fill="#fdf3df"/>
-    <circle cx="48" cy="52" r="3.6" fill="#5a3b2e"/>
-    <circle cx="72" cy="52" r="3.6" fill="#5a3b2e"/>
+    <circle cx="48" cy="52" r="3.6" fill="#5a3b2e"/><circle cx="72" cy="52" r="3.6" fill="#5a3b2e"/>
     <ellipse cx="60" cy="60" rx="4" ry="3" fill="#5a3b2e"/>
     <path d="M52 67 Q60 73 68 67" stroke="#5a3b2e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <circle cx="42" cy="62" r="4" fill="#f7b8a0" opacity=".8"/>
-    <circle cx="78" cy="62" r="4" fill="#f7b8a0" opacity=".8"/>
-    <circle cx="60" cy="86" r="3" fill="#f3d24b"/>
-    <circle cx="60" cy="93" r="3" fill="#f3d24b"/>
+    <circle cx="42" cy="62" r="4" fill="#f7b8a0" opacity=".8"/><circle cx="78" cy="62" r="4" fill="#f7b8a0" opacity=".8"/>
+    <circle cx="60" cy="86" r="3" fill="#f3d24b"/><circle cx="60" cy="93" r="3" fill="#f3d24b"/>
     <path d="M88 50 C98 40 104 34 106 28" stroke="#ef8a64" stroke-width="9" fill="none" stroke-linecap="round"/>
   </svg>`;
 }
-$('homeMascot').innerHTML = mascotSVG(110);
-$('resMascot').innerHTML = mascotSVG(120);
-
-/* ================= HOME ================= */
-function renderHome(){
-  const played = Object.keys(progress).filter(k => k.startsWith('sec')).length;
-  const acc = stats.answered ? Math.round(stats.correct/stats.answered*100) : 0;
-  $('homeStats').innerHTML =
-    `クリア済み <b>${played}</b> / ${NUM_SEC} Section<br>正答率 <b>${acc}</b>％ ・ プレイ回数 <b>${stats.plays}</b>回`;
+function crownSVG(){
+  return '<path d="M35 22 L45 34 L60 18 L75 34 L85 22 L82 44 H38 Z" fill="#f3c032" stroke="#d99e1b" stroke-width="2"/><circle cx="35" cy="20" r="4" fill="#f3577a"/><circle cx="60" cy="15" r="4" fill="#f3577a"/><circle cx="85" cy="20" r="4" fill="#f3577a"/>';
 }
-
-/* ================= LEAGUE ================= */
-function leagueTab(i){
-  $('tab4').classList.toggle('on', i===0);
-  $('tabSp').classList.toggle('on', i===1);
-  $('seclist').style.display = i===0 ? 'block' : 'none';
-  $('speclist').style.display = i===1 ? 'block' : 'none';
-  $('reviewDesc').textContent = wrongs.length >= 4
-    ? `間違えた単語 ${wrongs.length}語 から出題`
-    : '間違えた単語がたまると挑戦できるよ（あと'+Math.max(0,4-wrongs.length)+'語）';
-  $('reviewCard').classList.toggle('off', wrongs.length < 4);
+function avatarSVG(size, withCrown){
+  return `<svg width="${size}" height="${size}" viewBox="0 0 120 130">
+    <g transform="translate(0,10)">${mascotSVG(size).replace(/<\/?svg[^>]*>/g,'')}</g>
+    ${withCrown ? '<g transform="translate(0,-4)">'+crownSVG()+'</g>' : ''}
+  </svg>`;
 }
-function trophySVG(){
-  return '<svg width="22" height="22" viewBox="0 0 30 28"><path d="M7 3 H23 V6 H26 V9 a6 6 0 0 1 -5 5.9 A7 7 0 0 1 17 19 V22 H21 V26 H9 V22 H13 V19 A7 7 0 0 1 9 14.9 A6 6 0 0 1 4 9 V6 H7 Z M7 8.2 H6 V9 a4 4 0 0 0 2 3.4 Z M23 8.2 V12.4 A4 4 0 0 0 25 9 V8.2 Z" fill="#fff"/></svg>';
+function trophySVG(color){
+  return `<svg width="24" height="24" viewBox="0 0 30 28"><path d="M7 3 H23 V6 H26 V9 a6 6 0 0 1 -5 5.9 A7 7 0 0 1 17 19 V22 H21 V26 H9 V22 H13 V19 A7 7 0 0 1 9 14.9 A6 6 0 0 1 4 9 V6 H7 Z M7 8.2 H6 V9 a4 4 0 0 0 2 3.4 Z M23 8.2 V12.4 A4 4 0 0 0 25 9 V8.2 Z" fill="${color||'#fff'}"/></svg>`;
 }
 function sakuraSVG(){
-  return '<svg width="56" height="56" viewBox="0 0 60 60">'+
-    [0,72,144,216,288].map(a =>
-      `<path transform="rotate(${a} 30 30)" d="M30 30 C20 24 18 12 30 6 C42 12 40 24 30 30 Z" fill="#f5527b"/>`).join('')+
-    '</svg>';
+  return '<svg width="60" height="60" viewBox="0 0 60 60">'+
+    [0,72,144,216,288].map(a => `<path transform="rotate(${a} 30 30)" d="M30 30 C20 24 18 12 30 6 C42 12 40 24 30 30 Z" fill="#f5527b"/>`).join('')+'</svg>';
 }
+const CAL_TROPHY = '<svg width="19" height="19" viewBox="0 0 30 28"><path d="M7 3 H23 V6 H26 V9 a6 6 0 0 1 -5 5.9 A7 7 0 0 1 17 19 V22 H21 V26 H9 V22 H13 V19 A7 7 0 0 1 9 14.9 A6 6 0 0 1 4 9 V6 H7 Z" fill="#1fa7b8"/></svg>';
+const CAL_FLAG = '<svg width="15" height="19" viewBox="0 0 16 20"><rect x="2" y="1" width="2.4" height="18" rx="1" fill="#c0392b"/><path d="M4.4 2 L14 5 L4.4 8.5 Z" fill="#f3577a"/></svg>';
+const FIST_SVG = '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 11 V7.5 a1.6 1.6 0 0 1 3.2 0 V11 M8.2 10 V6 a1.6 1.6 0 0 1 3.2 0 V10 M11.4 10 V6.5 a1.6 1.6 0 0 1 3.2 0 V11 M14.6 11 V8 a1.6 1.6 0 0 1 3.2 0 V14 a6 6 0 0 1 -6 6 H10.5 A5.5 5.5 0 0 1 5 14.5 Z" fill="#fff"/></svg>';
+$('homeMascot').innerHTML = mascotSVG(92);
+$('resMascot').innerHTML = mascotSVG(120);
+$('majorMascot').innerHTML = mascotSVG(110);
+document.querySelectorAll('.htrophy').forEach(b => { b.innerHTML = trophySVG('#fff'); });
+
+/* ================= HOME ================= */
+const BUBBLES = ['오늘도 화이팅〜！','안녕〜！같이 공부하자','만점 가즈아〜！','コツコツが勝つコツ〜'];
+function renderHome(){
+  d5Check();
+  $('homeBubble').textContent = BUBBLES[Math.floor(Math.random()*BUBBLES.length)];
+  renderCalendar();
+  const h = new Date().getHours();
+  const lbl = h < 5 ? '夜' : h < 11 ? '朝' : h < 17 ? '昼' : '夜';
+  $('d5Label').textContent = lbl+'の５問！';
+  $('d5Left').textContent = 'あと'+d5.left+'回';
+  $('d5Btn').disabled = d5.left <= 0;
+}
+function renderCalendar(){
+  const now = new Date(), y = now.getFullYear(), m = now.getMonth();
+  $('calTitle').textContent = y+'年 '+(m+1)+'月';
+  const dow = (new Date(y, m, 1).getDay()+6)%7;     // 月曜はじまり
+  const days = new Date(y, m+1, 0).getDate();
+  let html = '';
+  ['月','火','水','木','金','土','日'].forEach(d => html += `<div class="cal-h">${d}</div>`);
+  for(let i=0;i<dow;i++) html += '<div class="cal-c"></div>';
+  for(let d=1; d<=days; d++){
+    const key = y+'-'+(m+1)+'-'+d;
+    html += `<div class="cal-c" onclick="toggleGoal('${key}')">
+      <span class="cal-d${d===now.getDate()?' today':''}">${d}</span>
+      <span class="cal-ic">${playDates.includes(key)?CAL_TROPHY:''}${goals.includes(key)?CAL_FLAG:''}</span></div>`;
+  }
+  const total = dow + days;
+  for(let i=0; i<(7-total%7)%7; i++) html += '<div class="cal-c"></div>';
+  $('calGrid').innerHTML = html;
+}
+function toggleGoal(key){
+  const i = goals.indexOf(key);
+  if(i >= 0) goals.splice(i,1); else goals.push(key);
+  store.set('goals', goals);
+  renderCalendar();
+}
+function startDaily(){
+  d5Check();
+  if(d5.left <= 0) return;
+  const pool = [];
+  for(let i=0;i<5;i++) pool.push((d5.pos+i) % WORDS.length);
+  buildQuiz(pool, {kj:2,jk:2,ls:1}, '今日の５問', 'daily', 'home');
+}
+
+/* ================= HUB ================= */
+function totalScore(){
+  let s = 0;
+  for(const k in progress){ if(/^(sec|ch|prem)/.test(k)) s += progress[k].best || 0; }
+  return s;
+}
+function lvOf(){ return 1 + Math.floor(stats.answered/30); }
+const R_ORDER = ['D','C','B','A','S','SS'];
+function premiumOpen(){
+  for(let i=0;i<NUM_CH;i++){
+    const p = progress['ch'+i];
+    if(!p || R_ORDER.indexOf(p.rank) < R_ORDER.indexOf('B')) return false;
+  }
+  return true;
+}
+function renderHub(){
+  $('hubAvatar').innerHTML = avatarSVG(100, lvOf() >= 10);
+  $('hubName').textContent = nickname;
+  $('hubScore').textContent = totalScore()+'点';
+  $('hubLv').textContent = 'Lv.'+lvOf();
+  const open = premiumOpen();
+  $('hubCards').innerHTML = `
+    <div class="hubcard" onclick="go('league')">
+      <span class="ic" style="background:#b08d57">${trophySVG('#fff')}</span>
+      <span class="tx"><b>ルーキーリーグ</b><span>Section別に出題：30問</span></span>
+    </div>
+    <div class="hubcard" onclick="go('major')">
+      <span class="ic" style="background:#b9bdc4">${trophySVG('#fff')}</span>
+      <span class="tx"><b>メジャーリーグ</b><span>Chapter別に出題：30問</span></span>
+    </div>
+    <div class="hubcard${open?'':' locked'}" onclick="${open ? 'startPremium()' : "showInfoModal('premlock')"}">
+      <span class="ic" style="background:#e3b232">${trophySVG('#fff')}</span>
+      <span class="tx"><b>プレミアムリーグ</b><span>全1671語から出題：30問${open?'':'（メジャー全ChapterＢ以上で開放）'}</span></span>
+    </div>
+    <div class="hubcard danger" onclick="startReview()">
+      <span class="ic" style="background:#f4502e">${FIST_SVG}</span>
+      <span class="tx"><b>苦手特訓モード</b><span>間違えた単語 ${wrongs.length}語 から出題</span></span>
+    </div>`;
+}
+
+/* ================= ルーキーリーグ ================= */
+function chapterOfSec(si){ return Math.floor(si/SEC_PER_CH)+1; }
 function renderLeague(){
-  const list = $('seclist');
   let html = '';
   for(let i=0;i<NUM_SEC;i++){
     const p = progress['sec'+i];
-    const rank = p ? p.rank : '';
-    const perfect = p && p.perfect;
-    html += `<div class="secrow${perfect?' perfect':''}">
+    const start = i*SEC_SIZE+1, end = Math.min((i+1)*SEC_SIZE, WORDS.length);
+    html += `<div class="secrow">
       <div class="seccard" onclick="startSection(${i})">
-        <span class="sec-troph${p?'':' dim'}">${trophySVG()}</span>
-        <span class="sec-ch">Chapter ${chapterOf(i)}</span>
-        <span class="sec-name">Section ${i+1}</span>
-        <span class="rankchip${p?'':' none'}">${p?rank:'未'}</span>
+        <span class="sec-troph${p?'':' dim'}">${trophySVG('#fff')}</span>
+        <span class="sec-ch">Chapter ${chapterOfSec(i)}</span>
+        <span class="sec-name">Section ${i+1}<small>単語 ${start}〜${end}</small></span>
+        <span class="rankchip${p?'':' none'}">${p?p.rank:'未'}</span>
       </div>
-      <span class="sakura">${sakuraSVG()}<span>満点</span></span>
+      <span class="side-slot">${p && p.perfect ? '<span class="sakura">'+sakuraSVG()+'<span>満点</span></span>' : ''}</span>
     </div>`;
   }
-  list.innerHTML = html;
-  leagueTab($('tabSp').classList.contains('on') ? 1 : 0);
+  $('seclist').innerHTML = html;
 }
-document.querySelectorAll('.htrophy').forEach(b => { b.innerHTML = trophySVG(); });
+
+/* ================= メジャーリーグ ================= */
+function chRange(ci){
+  const start = ci*SEC_PER_CH*SEC_SIZE;
+  const end = Math.min(start + SEC_PER_CH*SEC_SIZE, WORDS.length);
+  return [start, end];
+}
+function renderMajor(){
+  let html = '';
+  for(let i=0;i<NUM_CH;i++){
+    const p = progress['ch'+i];
+    const [s, e] = chRange(i);
+    const wcount = wrongs.filter(w => w >= s && w < e).length;
+    let side;
+    if(p && p.perfect) side = '<span class="sakura">'+sakuraSVG()+'<span>満点</span></span>';
+    else side = `<button class="wrongbtn" ${wcount>=4?'':'disabled'} onclick="startChReview(${i});event.stopPropagation();">
+      <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="#fff"/><path d="M7 13 L11.5 17.5 L19 9" stroke="#2bb3d6" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+      間違単語</button>`;
+    html += `<div class="secrow">
+      <div class="seccard" onclick="startChapter(${i})">
+        <span class="sec-troph silver">${trophySVG('#fff')}</span>
+        <span class="sec-ch">Chapter ${i+1}</span>
+        <span class="sec-name" style="font-size:19px">単語 ${s+1}〜${e}</span>
+        <span class="rankchip${p?'':' none'}">${p?p.rank:'未'}</span>
+      </div>
+      <span class="side-slot">${side}</span>
+    </div>`;
+  }
+  $('chlist').innerHTML = html;
+}
 
 /* ================= QUIZ ENGINE ================= */
-let quiz = null, timer = null, timeLeft = 10, lastQuizKey = null, lastQuizStart = null;
+let quiz = null, timer = null, timeLeft = 10, lastQuizStart = null;
 const Q_TIME = 10;
-
 function pickDistractors(correctIdx, field, n){
   const used = new Set([WORDS[correctIdx][field]]);
   const out = [];
@@ -594,45 +797,54 @@ function pickDistractors(correctIdx, field, n){
 }
 function makeQuestion(wIdx, type){
   const [kr, jp] = WORDS[wIdx];
-  const field = (type === 'jk') ? 0 : 1;          // jk -> choices are Korean
+  const field = (type === 'jk') ? 0 : 1;
   const correctText = WORDS[wIdx][field];
   const choices = shuffle([correctText, ...pickDistractors(wIdx, field, 3)]);
   return {wIdx, type, kr, jp, choices, ansIdx: choices.indexOf(correctText)};
 }
-function buildQuiz(poolIdxs, plan, title, key){
-  primeSpeech(); // クリック操作の中で音声をアンロック
-  // plan: {kj:n, jk:n, ls:n}
+function buildQuiz(poolIdxs, plan, title, key, back){
+  primeSpeech();
   const qs = [];
-  let bag = shuffle(poolIdxs);
-  let cursor = 0;
+  let bag = shuffle(poolIdxs), cursor = 0;
   const take = () => { if(cursor >= bag.length){ bag = shuffle(poolIdxs); cursor = 0; } return bag[cursor++]; };
   for(const t of ['kj','jk','ls']){
     for(let i=0;i<(plan[t]||0);i++) qs.push(makeQuestion(take(), t));
   }
   quiz = {qs, idx:0, base:0, bonus:0, correct:0,
           byType:{kj:[0,plan.kj||0], jk:[0,plan.jk||0], ls:[0,plan.ls||0]},
-          title, key};
-  lastQuizKey = key; lastQuizStart = {poolIdxs, plan, title, key};
+          title, key, back: back || 'hub'};
+  lastQuizStart = {poolIdxs, plan, title, key, back};
   $('quizTitle').textContent = title;
   go('quiz');
   showQuestion();
 }
+function rangePool(s, e){ const p = []; for(let i=s;i<e;i++) p.push(i); return p; }
 function startSection(i){
-  const pool = [];
-  for(let w = i*SEC_SIZE; w < Math.min((i+1)*SEC_SIZE, WORDS.length); w++) pool.push(w);
-  buildQuiz(pool, {kj:10,jk:10,ls:10}, 'Section '+(i+1), 'sec'+i);
+  buildQuiz(rangePool(i*SEC_SIZE, Math.min((i+1)*SEC_SIZE, WORDS.length)), {kj:10,jk:10,ls:10}, 'Section '+(i+1), 'sec'+i, 'league');
 }
-function startRandom(){
-  buildQuiz(WORDS.map((_,i)=>i), {kj:10,jk:10,ls:10}, 'ランダム', 'random');
+function startChapter(i){
+  const [s, e] = chRange(i);
+  buildQuiz(rangePool(s, e), {kj:10,jk:10,ls:10}, 'Chapter '+(i+1), 'ch'+i, 'major');
+}
+function startPremium(){
+  buildQuiz(WORDS.map((_,i)=>i), {kj:10,jk:10,ls:10}, 'プレミアムリーグ', 'prem', 'hub');
 }
 function startListening(){
-  buildQuiz(WORDS.map((_,i)=>i), {kj:0,jk:0,ls:15}, 'リスニング', 'listen');
+  buildQuiz(WORDS.map((_,i)=>i), {kj:0,jk:0,ls:15}, 'リスニング', 'listen', 'listen');
 }
 function startReview(){
-  if(wrongs.length < 4) return;
+  if(wrongs.length < 4){ showInfoModal('noweak'); return; }
   const n = Math.min(30, wrongs.length);
-  const half = Math.floor(n/2);
-  buildQuiz(wrongs.slice(), {kj:half, jk:n-half, ls:0}, '苦手復習', 'review');
+  const half = Math.ceil(n/2);
+  buildQuiz(wrongs.slice(), {kj:half, jk:n-half, ls:0}, '苦手特訓', 'review', 'hub');
+}
+function startChReview(i){
+  const [s, e] = chRange(i);
+  const pool = wrongs.filter(w => w >= s && w < e);
+  if(pool.length < 4) return;
+  const n = Math.min(30, pool.length);
+  const half = Math.ceil(n/2);
+  buildQuiz(pool, {kj:half, jk:n-half, ls:0}, 'Chapter '+(i+1)+' 間違単語', 'chrev', 'major');
 }
 
 const BANNER_COLOR = {kj:'var(--brown)', jk:'var(--gray)', ls:'var(--teal)'};
@@ -644,19 +856,18 @@ function showQuestion(){
   $('mark').style.display = 'none';
   $('ptsBadge').style.display = 'none';
   $('qreveal').style.display = 'none';
-  const w = $('qword');
-  const sp = $('speakBtn');
+  const w = $('qword'), sp = $('speakBtn');
   sp.style.display = 'none';
   if(q.type === 'kj'){
-    w.textContent = q.kr; w.className='';
-    sp.style.display = 'flex';                 // 再生ボタンも表示
-    setTimeout(()=>speakKr(q.kr), 250);        // 出題と同時に発音
-  }
-  else if(q.type === 'jk'){ w.textContent = q.jp; w.className = q.jp.length > 9 ? 'small' : ''; }
-  else {
+    w.textContent = q.kr; w.className = '';
+    sp.style.display = 'flex';
+    setTimeout(()=>speakKr(q.kr), 250);
+  } else if(q.type === 'jk'){
+    w.textContent = q.jp; w.className = q.jp.length > 9 ? 'small' : '';
+  } else {
     w.innerHTML = '<svg width="58" height="58" viewBox="0 0 24 24"><path d="M3 9 v6 h4 l5 4.5 V4.5 L7 9 Z" fill="#fff"/><path d="M15.5 8.5 a5 5 0 0 1 0 7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M18 6 a8.5 8.5 0 0 1 0 12" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'+
       '<div style="font-size:19px;margin-top:8px">音声を聞いて意味を選ぼう</div>';
-    w.className='';
+    w.className = '';
     sp.style.display = 'flex';
     setTimeout(()=>speakKr(q.kr), 350);
   }
@@ -700,7 +911,7 @@ function answer(i){
     $('qreveal').textContent = q.kr + '（' + q.jp + '）';
     $('qreveal').style.display = 'block';
   }
-  if(q.type === 'jk'){ speakKr(q.kr); }        // 正解発表と同時に正解単語を発音
+  if(q.type === 'jk'){ speakKr(q.kr); }   // 正解発表と同時に正解単語を発音
   const inner = $('markInner');
   if(correct){
     quiz.correct++; quiz.byType[q.type][0]++;
@@ -708,15 +919,16 @@ function answer(i){
     const bn = timeLeft >= Q_TIME*0.66 ? 2 : timeLeft >= Q_TIME*0.33 ? 1 : 0;
     quiz.bonus += bn;
     stats.correct++;
-    const wi = wrongs.indexOf(q.wIdx);
-    if(wi >= 0 && quiz.key === 'review'){ wrongs.splice(wi,1); store.set('wrongs', wrongs); }
-    inner.className = 'maru popin';
-    if(bn > 0){
-      $('ptsBadge').textContent = '+'+bn+'点';
-      $('ptsBadge').style.display = 'block';
+    if(quiz.key === 'review' || quiz.key === 'chrev'){
+      const wi = wrongs.indexOf(q.wIdx);
+      if(wi >= 0){ wrongs.splice(wi,1); store.set('wrongs', wrongs); }
     }
+    inner.className = 'maru popin';
+    if(bn > 0){ $('ptsBadge').textContent = '+'+bn+'点'; $('ptsBadge').style.display = 'block'; }
   } else {
     if(!wrongs.includes(q.wIdx)){ wrongs.push(q.wIdx); store.set('wrongs', wrongs); }
+    wrongCounts[q.wIdx] = (wrongCounts[q.wIdx]||0) + 1;
+    store.set('wrongCounts', wrongCounts);
     inner.className = 'batsu popin';
   }
   $('mark').style.display = 'flex';
@@ -732,23 +944,26 @@ function next(){
 
 /* ================= RESULT ================= */
 function rankOf(ratio){
-  return ratio >= 0.95 ? 'S' : ratio >= 0.85 ? 'A' : ratio >= 0.7 ? 'B' : ratio >= 0.5 ? 'C' : 'D';
+  return ratio >= 1 ? 'SS' : ratio >= 0.95 ? 'S' : ratio >= 0.85 ? 'A' : ratio >= 0.7 ? 'B' : ratio >= 0.5 ? 'C' : 'D';
 }
-const RANK_MSG = {S:['すごい！','Sランクだよ！'], A:['おしい！','あとちょっとでS！'], B:['いい調子！','Bランクだよ！'], C:['もう一回','挑戦してみよう！'], D:['これから','伸びるよ！']};
+const RANK_MSG = {SS:['パーフェクト！','SSランクだよ！'], S:['すごい！','Sランクだよ！'], A:['おしい！','あとちょっとでS！'], B:['いい調子！','Bランクだよ！'], C:['もう一回','挑戦してみよう！'], D:['これから','伸びるよ！']};
 function finishQuiz(){
   stats.plays++; store.set('stats', stats);
+  if(!playDates.includes(todayK)){ playDates.push(todayK); if(playDates.length > 80) playDates.shift(); store.set('playDates', playDates); }
+  if(quiz.key === 'daily'){
+    d5.left = Math.max(0, d5.left-1);
+    d5.pos += 5;
+    if(d5.pos >= WORDS.length){ d5.pos -= WORDS.length; d5.lap++; }
+    store.set('d5', d5);
+  }
   const total = quiz.base + quiz.bonus;
-  const maxScore = quiz.qs.length * 10;
   const ratio = quiz.correct / quiz.qs.length;
   const rk = rankOf(ratio);
-  $('resTitle').textContent = quiz.key && quiz.key.startsWith('sec')
-      ? 'Chapter '+chapterOf(parseInt(quiz.key.slice(3)))
-      : quiz.title;
+  $('resTitle').textContent = quiz.title;
   $('bub1').textContent = RANK_MSG[rk][0];
   $('bub2').textContent = RANK_MSG[rk][1];
   $('scorePlus').textContent = quiz.base+'点 + '+quiz.bonus+'点';
   $('scoreTotal').textContent = total;
-  // category rows
   let rows = '';
   for(const t of ['kj','jk','ls']){
     const [c, n] = quiz.byType[t];
@@ -758,81 +973,81 @@ function finishQuiz(){
       <span class="res-num"><b>${c}</b> 問正解 / <b>${n}</b> 問中</span></div></div>`;
   }
   $('resRows').innerHTML = rows;
-  // bests
   const key = quiz.key, mk = monthKey();
   let p = progress[key] || {best:0, monthBest:0, month:mk, rank:'D', perfect:false};
   if(p.month !== mk){ p.month = mk; p.monthBest = 0; }
   p.best = Math.max(p.best, total);
   p.monthBest = Math.max(p.monthBest, total);
-  const rOrder = ['D','C','B','A','S'];
-  if(rOrder.indexOf(rk) > rOrder.indexOf(p.rank || 'D')) p.rank = rk;
+  if(R_ORDER.indexOf(rk) > R_ORDER.indexOf(p.rank || 'D')) p.rank = rk;
   if(quiz.correct === quiz.qs.length) p.perfect = true;
-  progress[key] = p; store.set('progress', progress);
-  const allN = 4115, moN = 164;
-  const fr = (sc, n) => Math.max(1, Math.round((1 - sc/maxScore) * n) + (sc === maxScore ? 0 : 1));
-  $('bestAll').innerHTML = `<span class="seg1">自己ベスト　<span class="y">${p.best}点</span></span>
-    <span class="seg2">全国ランク　<span class="y">${fr(p.best, allN)}位</span>/ ${allN}人中</span>`;
-  $('bestMonth').innerHTML = `<span class="seg1">今月ベスト　<span class="y">${p.monthBest}点</span></span>
-    <span class="seg2">全国ランク　<span class="y">${fr(p.monthBest, moN)}位</span>/ ${moN}人中</span>`;
-  const q = quiz; quiz = null;
-  $('scr-result').dataset.key = key;
+  if(key !== 'daily' && key !== 'chrev') progress[key] = p;
+  store.set('progress', progress);
+  $('bestRow').innerHTML = `<span class="seg1">自己ベスト　<span class="y">${p.best}点</span></span>
+    <span class="seg2">今月ベスト　<span class="y">${p.monthBest}点</span></span>`;
+  quiz = null;
   go('result');
 }
 function retry(){
-  if(lastQuizStart) buildQuiz(lastQuizStart.poolIdxs, lastQuizStart.plan, lastQuizStart.title, lastQuizStart.key);
+  if(!lastQuizStart) return;
+  if(lastQuizStart.key === 'daily'){ d5Check(); if(d5.left <= 0){ showInfoModal('d5over'); return; } startDaily(); return; }
+  buildQuiz(lastQuizStart.poolIdxs, lastQuizStart.plan, lastQuizStart.title, lastQuizStart.key, lastQuizStart.back);
 }
-function exitResult(){ go('league'); }
-
-/* ================= RANKING ================= */
-let rankBack = 'league';
-function openRanking(key){
-  rankBack = current === 'result' ? 'result' : 'league';
-  const p = key ? progress[key] : null;
-  const myScore = p ? p.monthBest : null;
-  $('rkInfo').textContent = key && key.startsWith('sec')
-    ? 'Section '+(parseInt(key.slice(3))+1)+'　全国ランキング（今月）' : '全国ランキング（今月）';
-  const rows = [];
-  const top = myScore !== null ? Math.max(myScore, 295) : 298;
-  let names = shuffle(FAKE_NAMES);
-  for(let i=0;i<10;i++){
-    rows.push({pos:i+1, nm:names[i], sc:Math.max(60, top - i*3 - Math.floor(Math.random()*4))});
-  }
-  let html = '';
-  const medals = ['🥇','🥈','🥉'];
-  let inserted = false;
-  rows.forEach(r => {
-    if(myScore !== null && !inserted && myScore >= r.sc){
-      html += rkRow(r.pos, 'あなた', myScore, true, medals[r.pos-1]); inserted = true;
-      r.pos++;
-    }
-    html += rkRow(r.pos, r.nm, r.sc, false, medals[r.pos-1]);
-  });
-  if(myScore !== null && !inserted){
-    const maxScore = 300;
-    const myPos = Math.max(11, Math.round((1 - myScore/maxScore) * 164) + 1);
-    html += '<div style="text-align:center;color:#999;font-weight:800;margin:6px 0">…</div>';
-    html += rkRow(myPos, 'あなた', myScore, true, null);
-  }
-  $('rkList').innerHTML = html;
-  go('ranking');
-}
-function rkRow(pos, nm, sc, me, medal){
-  return `<div class="rk-row${me?' me':''}">${medal?`<span class="medal">${medal}</span>`:`<span class="pos">${pos}位</span>`}<span class="nm">${nm}</span><span class="sc">${sc}点</span></div>`;
-}
+function exitResult(){ go(lastQuizStart ? lastQuizStart.back : 'hub'); }
 
 /* ================= PROFILE ================= */
+function profTab(i){
+  $('ptab0').classList.toggle('on', i===0);
+  $('ptab1').classList.toggle('on', i===1);
+  $('profMain').style.display = i===0 ? 'block' : 'none';
+  $('profWeak').style.display = i===1 ? 'block' : 'none';
+}
 function renderProfile(){
-  const secKeys = Object.keys(progress).filter(k => k.startsWith('sec'));
-  const sCount = secKeys.filter(k => progress[k].rank === 'S').length;
-  const pCount = secKeys.filter(k => progress[k].perfect).length;
-  const acc = stats.answered ? Math.round(stats.correct/stats.answered*100) : 0;
-  $('profBox').innerHTML = `
-    <div class="setrow">プレイ回数<span>${stats.plays} 回</span></div>
-    <div class="setrow">解答数<span>${stats.answered} 問</span></div>
-    <div class="setrow">正答率<span>${acc} ％</span></div>
-    <div class="setrow">Sランク獲得<span>${sCount} / ${NUM_SEC} Section</span></div>
-    <div class="setrow">満点獲得<span>${pCount} Section</span></div>
-    <div class="setrow">苦手単語<span>${wrongs.length} 語</span></div>`;
+  d5Check();
+  $('profName').textContent = nickname;
+  const lv = lvOf();
+  const anyPerfect = Object.values(progress).some(p => p.perfect);
+  const badges = [
+    {svg:'<svg class="badge'+(login.total>=7?'':' off')+'" viewBox="0 0 40 40"><path d="M20 4 L34 16 L20 37 L6 16 Z" fill="#7fd4f0" stroke="#4ab3d8" stroke-width="2"/><path d="M20 4 L27 16 L20 37 L13 16 Z" fill="#b8eafc"/></svg>'},
+    {svg:'<svg class="badge'+(anyPerfect?'':' off')+'" viewBox="0 0 40 40"><path d="M6 12 L13 19 L20 8 L27 19 L34 12 L31 30 H9 Z" fill="#f3c032" stroke="#d99e1b" stroke-width="2"/><circle cx="20" cy="24" r="3" fill="#f3577a"/></svg>'},
+    {svg:'<svg class="badge'+(totalScore()>=3000?'':' off')+'" viewBox="0 0 40 40"><rect x="5" y="14" width="30" height="20" rx="3" fill="#b07a3e"/><path d="M5 17 a15 9 0 0 1 30 0 v3 H5 Z" fill="#8d5e2a"/><rect x="17" y="18" width="6" height="8" rx="1" fill="#f3c032"/></svg>'}
+  ];
+  $('profMain').innerHTML = `
+    <div class="avcard">
+      <span class="av">${avatarSVG(96, lv >= 10)}</span>
+      <span class="avr">
+        <span class="nm">${nickname}</span>
+        <span class="lvrow"><span class="lv">Lv.${lv}</span>${badges.map(b=>b.svg).join('')}</span>
+      </span>
+    </div>
+    <div class="psec"><span class="ic">${trophySVG('#fff')}</span>選手権</div>
+    <div class="statgrid">
+      <div class="cell wide"><span class="k" style="margin:0">選手権総合得点</span><span class="v">${totalScore()}点</span></div>
+      <div class="cell"><div class="k">選手権参加回数</div><div class="v">${stats.plays}</div></div>
+      <div class="cell"><div class="k">通算ログイン日数</div><div class="v">${login.total}</div></div>
+      <div class="cell"><div class="k">連続ログイン日数</div><div class="v">${login.streak}</div></div>
+      <div class="cell"><div class="k">最大連続ログイン日数</div><div class="v">${login.max}</div></div>
+    </div>
+    <div class="psec"><span class="ic" style="background:var(--teal)">
+      <svg width="22" height="22" viewBox="0 0 34 34"><path d="M17 1 L33 13 L27 32 H7 L1 13 Z" fill="#fff"/><text x="17" y="24" text-anchor="middle" font-size="17" font-weight="bold" fill="var(--teal)">5</text></svg>
+    </span>今日の５問</div>
+    <div class="statgrid" style="margin-bottom:22px">
+      <div class="cell"><div class="k">現在</div><div class="v">${d5.lap+1}周目</div></div>
+      <div class="cell"><div class="k">クリア単語数</div><div class="v" style="font-size:22px">${d5.pos}/${WORDS.length}語</div></div>
+    </div>
+    <div class="psec" style="margin-top:0">プロフィール</div>
+    <div class="profrow"><span class="k">ニックネーム</span><span>${nickname}</span></div>
+    <div class="profrow"><span class="k">正答率</span><span>${stats.answered ? Math.round(stats.correct/stats.answered*100) : 0}％（${stats.answered}問中）</span></div>
+    <button class="editbtn" style="display:block;margin:4px auto 0" onclick="editNickname()">プロフィール編集</button>`;
+  // 苦手TOP10
+  const entries = Object.entries(wrongCounts).map(([k,v]) => [parseInt(k), v]).sort((a,b) => b[1]-a[1]).slice(0,10);
+  $('profWeak').innerHTML = entries.length
+    ? entries.map((e,i) =>
+        `<div class="weakrow"><span class="pos">${i+1}位</span><span class="kr">${WORDS[e[0]][0]}</span><span class="jp">${WORDS[e[0]][1]}</span><span class="ct">×${e[1]}</span></div>`).join('')
+    : '<p style="text-align:center;color:#999;margin-top:30px">まだ間違えた単語がないよ！</p>';
+}
+function editNickname(){
+  const v = prompt('ニックネームを入力してね', nickname);
+  if(v && v.trim()){ nickname = v.trim().slice(0,12); store.set('nickname', nickname); renderProfile(); }
 }
 
 /* ================= SETTINGS ================= */
@@ -844,10 +1059,12 @@ function toggleSound(){
 function setRate(v){ settings.rate = parseFloat(v); store.set('settings', settings); }
 function askReset(){
   showModal('学習データを全部消すよ。<br>いいかな？', () => {
-    progress = {}; stats = {plays:0,answered:0,correct:0}; wrongs = [];
-    store.set('progress',progress); store.set('stats',stats); store.set('wrongs',wrongs);
+    progress = {}; stats = {plays:0,answered:0,correct:0}; wrongs = []; wrongCounts = {};
+    playDates = []; goals = []; d5 = {pos:0,lap:0,date:null,left:5};
+    store.set('progress',{}); store.set('stats',stats); store.set('wrongs',[]); store.set('wrongCounts',{});
+    store.set('playDates',[]); store.set('goals',[]); store.set('d5',d5);
     go('settings');
-  });
+  }, 'やめておく', '消す');
 }
 
 /* ================= SPEECH ================= */
@@ -861,7 +1078,6 @@ function pickVoice(){
 try{ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }catch(e){}
 let speechPrimed = false;
 function primeSpeech(){
-  // ブラウザの自動再生制限対策：クリックイベント内で一度無音発話して解錠する
   if(speechPrimed) return;
   try{
     speechSynthesis.cancel();
@@ -875,9 +1091,9 @@ function primeSpeech(){
 function speakKr(text){
   if(!settings.sound) return;
   try{
-    if(!koVoice) pickVoice();   // 後から読み込まれたボイスを再取得
+    if(!koVoice) pickVoice();
     speechSynthesis.cancel();
-    speechSynthesis.resume();   // 一時停止状態の解除（Chrome対策）
+    speechSynthesis.resume();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'ko-KR';
     if(koVoice) u.voice = koVoice;
@@ -892,16 +1108,37 @@ function replayAudio(ev){
 
 /* ================= MODAL ================= */
 let modalCb = null;
-function showModal(msg, cb){
+function showModal(msg, cb, cancelLabel, okLabel){
   $('modalMsg').innerHTML = msg;
   modalCb = cb;
+  $('mCancel').style.display = '';
+  $('mCancel').textContent = cancelLabel || 'つづける';
+  $('mOk').textContent = okLabel || 'OK';
+  $('modal').style.display = 'flex';
+}
+const INFO_MSG = {
+  feedback: 'このアプリはあなた専用だよ。<br>直してほしいところや追加したい機能は、Claudeに伝えてね！',
+  about: 'TOPIK1671<br>한국어능력시험 초급の単語 1671語を収録。<br>成績はこの端末のブラウザに保存されるよ。',
+  help: 'ルーキーリーグ：Section（100語）ごとに30問。<br>メジャーリーグ：Chapter（300語）ごとに30問。<br>プレミアムリーグ：全部の単語から30問。<br>ランクはSS（満点）〜Dまで！',
+  premlock: 'プレミアムリーグは、メジャーリーグの全ChapterをＢランク以上にすると開放されるよ！',
+  noweak: '間違えた単語がまだ少ないよ。<br>4語たまったら挑戦できるよ！',
+  d5over: '今日の５問はもう終わり！<br>また明日チャレンジしてね。'
+};
+function showInfoModal(kind){
+  $('modalMsg').innerHTML = INFO_MSG[kind];
+  modalCb = null;
+  $('mCancel').style.display = 'none';
+  $('mOk').textContent = 'OK';
   $('modal').style.display = 'flex';
 }
 $('mCancel').onclick = () => { $('modal').style.display = 'none'; if(current==='quiz' && quiz) startTimer(); };
 $('mOk').onclick = () => { $('modal').style.display = 'none'; if(modalCb) modalCb(); };
 function askQuit(){
   stopTimer();
-  showModal('クイズをやめますか？<br>スコアは保存されないよ。', () => { quiz = null; go('league'); });
+  showModal('クイズをやめますか？<br>スコアは保存されないよ。', () => {
+    const back = quiz ? quiz.back : 'hub';
+    quiz = null; go(back);
+  }, 'つづける', 'やめる');
 }
 
 /* ================= PWA ================= */
@@ -915,7 +1152,6 @@ if('serviceWorker' in navigator){
 /* ================= INIT ================= */
 $('sndTgl').classList.toggle('on', settings.sound);
 $('rateRange').value = settings.rate;
-renderHome();
 go('home');
 </script>
 </body>
