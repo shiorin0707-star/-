@@ -2,8 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>韓単リーグ TOPIK初級</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>TOPIK1671</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TOPIK1671">
+<meta name="theme-color" content="#00b0c0">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 :root{
   --teal:#00b0c0; --teal-dark:#0096a5; --cream:#f5f0dd; --brown:#b3905f;
@@ -260,6 +266,13 @@ input[type=range]{width:140px;}
 }
 .m-cancel{background:#fff;border:3px solid var(--teal);color:var(--teal);}
 .m-ok{background:var(--teal);border:3px solid var(--teal);color:#fff;}
+/* ---------- PWA standalone (iPhoneフルスクリーン) ---------- */
+@supports(padding:env(safe-area-inset-top)){
+  body.standalone #statusbar{height:env(safe-area-inset-top);flex-basis:env(safe-area-inset-top);}
+  body.standalone #statusbar > *{display:none;}
+  body.standalone #bottomnav{height:calc(74px + env(safe-area-inset-bottom));padding-bottom:calc(6px + env(safe-area-inset-bottom));}
+  body.standalone #skipWrap{padding-bottom:calc(26px + env(safe-area-inset-bottom));}
+}
 .fade{animation:fadein .25s;}
 @keyframes fadein{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:scale(1);}}
 @keyframes pop{0%{opacity:0;transform:scale(.6);}60%{opacity:1;transform:scale(1.05);}100%{opacity:1;transform:scale(1);}}
@@ -889,6 +902,14 @@ $('mOk').onclick = () => { $('modal').style.display = 'none'; if(modalCb) modalC
 function askQuit(){
   stopTimer();
   showModal('クイズをやめますか？<br>スコアは保存されないよ。', () => { quiz = null; go('league'); });
+}
+
+/* ================= PWA ================= */
+if(navigator.standalone) document.body.classList.add('standalone');
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    try{ navigator.serviceWorker.register('./sw.js'); }catch(e){}
+  });
 }
 
 /* ================= INIT ================= */
